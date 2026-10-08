@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Stats · TBD MMO design wiki</title>
+<meta name="description" content="The six primary attributes, the derived combat stats they feed, resources, and how modifiers are applied.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script>try{var t=localStorage.getItem('wiki-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer src="../assets/wiki.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="rail">
+  <div class="rail-head">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-name">TBD MMO<small>Design wiki · working title</small></span></a>
+    <button type="button" class="theme-toggle">Theme: system</button>
+  </div>
+  <div class="rail-label">Design wiki</div>
+  <nav aria-label="Wiki sections">
+    <ol>
+      <li><a href="../index.html#concept"><span>01</span>Concept</a></li>
+      <li><a href="../world.html"><span>02</span>World</a></li>
+      <li><a href="../races.html"><span>03</span>Races &amp; Characters</a></li>
+      <li><a href="../index.html#systems" aria-current="true"><span>04</span>Systems</a>
+        <ul>
+          <li><a href="../systems/mana.html">Mana Economy</a></li>
+          <li><a href="../systems/stats.html" aria-current="page">Character Stats</a></li>
+          <li><a href="../systems/combat.html">Combat</a></li>
+          <li><a href="../systems/progression.html">Progression</a></li>
+          <li><a href="../systems/pvp.html">PvP, Robbery &amp; PK</a></li>
+          <li><a href="../systems/world-progression.html">World Progression</a></li>
+          <li><a href="../systems/inventory-economy.html">Inventory &amp; Economy</a></li>
+          <li><a href="../systems/social-guilds.html">Social &amp; Guilds</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#status"><span>05</span>Status</a></li>
+    </ol>
+  </nav>
+  <div class="rail-note"><span class="phase-dot"></span>Early development<p>Everything here is a draft and will change.</p></div>
+</aside>
+<main id="main">
+<div class="topline"><span><a href="../index.html">Design wiki</a> / <a href="../index.html#systems">04 Systems</a> / Character Stats</span><span class="tag draft">Draft</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">Systems / 04.2</div>
+    <h1>Character Stats</h1>
+  </div>
+  <p class="lede">The agreed stat vocabulary. Exact values, scaling formulas, damage formulas and balance caps are still open.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#primary">Primary attributes</a></li>
+    <li><a href="#derived">Derived stats</a></li>
+    <li><a href="#order">How modifiers apply</a></li>
+    <li><a href="#invariants">Invariants</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>Players, NPCs and monsters share the same stat model. What separates them is their definition and the capabilities they have, not a different set of stats.</p>
+
+  <h2 id="primary">Primary attributes</h2>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Attribute</th><th scope="col">Feeds</th></tr></thead>
+    <tbody>
+      <tr><td><strong>STR</strong> Strength</td><td>Physical attack, physical critical multiplier</td></tr>
+      <tr><td><strong>DEX</strong> Dexterity</td><td>Accuracy, evasion, attack speed, physical critical chance</td></tr>
+      <tr><td><strong>CON</strong> Constitution</td><td>Max health, health regeneration, part of physical defense</td></tr>
+      <tr><td><strong>INT</strong> Intelligence</td><td>Magical attack, magical critical multiplier</td></tr>
+      <tr><td><strong>WIS</strong> Wisdom</td><td>Max mana, mana regeneration, magical defense, cast speed, magical critical chance</td></tr>
+      <tr><td><strong>CHA</strong> Charisma</td><td>Future social stats and interactions</td></tr>
+    </tbody>
+  </table>
+</div>
+<article class="prose">
+  <p>Primary attributes are inputs to the derived stats. They are not current resources, and they don’t directly represent an attack result.</p>
+  <div class="callout rule"><p><strong>Rule:</strong> movement speed should not scale strongly or directly from DEX. Otherwise DEX would improve accuracy, evasion, attack frequency, critical chance and mobility all at once, and become a mandatory attribute.</p></div>
+
+  <h2 id="derived">Derived stats</h2>
+  <h3>Resources</h3>
+  <ul class="chips"><li>Max health</li><li>Max mana</li><li>Health regeneration</li><li>Mana regeneration</li></ul>
+  <h3>Offense</h3>
+  <ul class="chips"><li>Physical attack</li><li>Magical attack</li><li>Accuracy</li><li>Physical critical chance</li><li>Physical critical multiplier</li><li>Magical critical chance</li><li>Magical critical multiplier</li><li>Attack speed</li><li>Cast speed</li><li>Cooldown reduction</li></ul>
+  <p>Physical and magical attack are inputs to damage calculation, not final damage values. <strong>Attack speed</strong> shortens the basic-attack cycle, <strong>cast speed</strong> shortens ability preparation and casting time, and <strong>cooldown reduction</strong> shortens the reuse delay after an action completes. These are three separate mechanics.</p>
+  <h3>Defense</h3>
+  <ul class="chips"><li>Physical defense</li><li>Magical defense</li><li>Evasion</li><li>Elemental resistance, per damage type</li></ul>
+  <p>Elemental resistance is keyed by damage type rather than a fixed field for every possible element. The supported damage types are not decided yet. Resistance may be negative.</p>
+  <h3>Movement</h3>
+  <ul class="chips"><li>Movement speed</li></ul>
+  <p>Acceleration and deceleration belong to movement itself and are not part of the general stat set.</p>
+  <p>Current health and current mana are the character’s live resources, not derived stats.</p>
+
+  <h2 id="order">How modifiers apply</h2>
+  <p>Values are resolved in a fixed order:</p>
+  <pre class="flow">base values of the character’s definition
++ permanent character modifiers
++ equipment modifiers
++ temporary effects
+→ resolved attributes and stats</pre>
+  <p>Each stat follows the same pipeline:</p>
+  <pre class="flow">(base + flat modifiers)
+× (1 + sum of additive percentages)
+× final multipliers
+→ clamp for that stat</pre>
+  <p>Every modifier carries a stable source, so everything an item, effect or progression node contributes can be replaced or removed together.</p>
+
+  <h2 id="invariants">Invariants</h2>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Stat</th><th scope="col">Rule</th></tr></thead>
+    <tbody>
+      <tr><td>Critical chance</td><td>0–100%</td></tr>
+      <tr><td>Critical multiplier</td><td>at least 1.0</td></tr>
+      <tr><td>Attack speed, cast speed</td><td>above 0</td></tr>
+      <tr><td>Max health, max mana</td><td>above 0</td></tr>
+      <tr><td>Health and mana regeneration</td><td>may be negative</td></tr>
+      <tr><td>Elemental resistance</td><td>may be negative</td></tr>
+      <tr><td>Cooldown reduction</td><td>needs a hard maximum</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<details class="questions">
+  <summary>Open questions · Character Stats</summary>
+  <ul>
+    <li>Exact formulas from primary attributes to derived stats.</li>
+    <li>The relative weight of attributes, equipment, weapon mastery and temporary effects.</li>
+    <li>The hard cap for cooldown reduction.</li>
+    <li>The accuracy-versus-evasion hit-chance formula, and its minimum and maximum result.</li>
+    <li>Which physical, magical and elemental damage types exist.</li>
+    <li>Whether critical chance or the critical multiplier gets additional soft caps.</li>
+    <li>Which social stats derive from CHA, and whether any of them affect combat.</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="Next and previous pages">
+  <a class="prev" href="mana.html"><small>← Previous</small>Mana Economy</a>
+  <a class="next" href="combat.html"><small>Next →</small>Combat</a>
+</nav>
+<footer class="site-footer">
+  <span>Design notes are drafts, not promises. Gaps are marked “Not designed yet”.</span>
+  <span><a href="../index.html#status">Project status</a></span>
+</footer>
+</main>
+</div>
+</body>
+</html>
