@@ -17,7 +17,9 @@ readable presentation of them, not a separate canon.
 - **Design and lore only.** No technical documentation, roadmap commitments,
   infrastructure, addresses, file paths or credentials. Everything in this repository,
   including its history, is public.
-- **English**, short sentences, one idea per paragraph.
+- **English first**, short sentences, one idea per paragraph. The English pages are the
+  source; `uk/` holds a Ukrainian translation of every page, and a language switch in the
+  rail moves between them. See [TRANSLATION.md](TRANSLATION.md) for the glossary and style.
 - **Images are added by the team, deliberately.** Each one is `.webp`, at most 300 KB,
   has alt text, opens full size with a download link, and its caption says what it is:
   `concept`, `generated` or `in-engine capture`. See [assets/img/README.md](assets/img/README.md).
@@ -29,22 +31,33 @@ index.html              hub: 01 Concept · 02 World · 03 Races & Characters · 
 world.html              cosmology, locations, factions, timeline
 races.html              playable races and notable characters
 systems/<name>.html     one page per game system
+uk/                     Ukrainian translation, the same pages at the same paths
 assets/wiki.css         design tokens, light and dark themes, layout
-assets/wiki.js          theme switch and image lightbox
+assets/wiki.js          theme switch, language switch and image lightbox
 assets/img/             published images (.webp)
 sources.json            which design note each section renders, pinned by git blob hash
 scripts/check_site.mjs  links, anchors, images, navigation, and leak check
 scripts/check_sync.mjs  which sections are out of date with the design notes
+TRANSLATION.md          English–Ukrainian glossary and translation style
 404.html, .nojekyll
 ```
 
 Every page repeats the same navigation rail. When you add or rename a page, update the
-rail on **every** page; `check_site.mjs` fails if one differs.
+rail on **every** page in both languages; `check_site.mjs` fails if one differs from the
+hub in its language (`index.html` or `uk/index.html`).
+
+A translation keeps the ids and links of its original, so the language switch lands on
+the same section. Every page also carries a link to its translation in the rail's
+`lang-switch` and two `<link rel="alternate" hreflang>` tags in its head.
+`check_site.mjs` checks all of this, so a page added or restructured in one language
+fails until the other catches up. `404.html` stays English and switches to the Ukrainian hub.
 
 ## Editing a section
 
 1. Read the design note(s) listed for the section in `sources.json`.
 2. Edit the page by hand. Keep what `omitted` lists out of the page.
+   Make the same change to its translation under `uk/`, using the glossary in
+   [TRANSLATION.md](TRANSLATION.md).
 3. Re-pin the section to the notes you rendered:
    `node scripts/check_sync.mjs --client ../MyProject --accept <section-id>`
    (`--client` is a checkout of the source repository; it defaults to `../MyProject`).
