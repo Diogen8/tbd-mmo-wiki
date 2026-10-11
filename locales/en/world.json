@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "World · TBD MMO design wiki",
+    "description": "Mana and cosmology, the island continent, factions and timeline."
+  },
+  "intro": {
+    "crumbs": "<a href=\"index.html\">Design wiki</a> / 02 World",
+    "pill": "Draft · not agreed for build",
+    "eyebrow": "World / 02",
+    "h1": "A white desert, held back by mana.",
+    "lede": "The fiction of the game, kept separate from its mechanics. Fiction is cheap to change: contradictions are fine while it is being worked out."
+  },
+  "toc": {
+    "cosmology": "Mana &amp; Cosmology",
+    "locations": "Locations",
+    "factions": "Factions",
+    "timeline": "Timeline"
+  },
+  "cosmology": {
+    "title": "Mana &amp; Cosmology",
+    "p1": "A team brainstorm, ongoing since September 2026. It captures the shape of the idea so it isn’t lost; it is not agreed for build yet. The mechanics that follow from this fiction live in <a href=\"systems/mana.html\">Mana Economy</a>, and how it plugs into character advancement lives in <a href=\"systems/progression.html\">Progression</a>.",
+    "h3_1": "Core idea",
+    "p2": "Mana is not a fuel that powers magic on top of an otherwise ordinary world. Here it is the substance reality itself is made of. Matter holds together because mana holds it together, at every scale, from a city to a single creature. Take the mana away and the thing it was sustaining doesn’t break: it stops having been there.",
+    "h3_2": "Tone",
+    "p3": "Dark fantasy, sword-and-magic, with <strong>Lineage 2</strong> as a partial touchstone. Civilization is a fragile, contested achievement rather than a given backdrop; survival and status are earned and can be lost; and the setting doesn’t promise a happy default state. Left untended, things regress rather than stay static.",
+    "h3_3": "The world’s starting state",
+    "p4": "At the root, the world is a <strong>white desert</strong>: mostly barren, with only a sparse scatter of naturally occurring magical flora and fauna surviving on whatever ambient mana exists. There is no default green world waiting to be discovered. Life and civilization are things mana actively produces, not things that were simply always there.",
+    "h3_4": "City mana cores",
+    "p5": "Every city has a <strong>core</strong> at its heart, and players keep it fed. A well-fed core radiates mana into the surrounding land: magical flora and fauna bloom, the land turns fertile, the city itself thrives.",
+    "li1": "<strong>Neglect reverses it.</strong> A starved core doesn’t just stop growing. The city and its land slide back toward the original desert: buildings crumble, NPCs leave, and the flora and fauna that had flourished around it degrade and die off. Nothing here is a one-time unlock; it is upkeep, indefinitely.",
+    "li2": "This is what gives the setting its edge: every thriving city is proof that someone is actively paying for it to exist, right now. It is not proof that it is safe.",
+    "h3_5": "Status: personal and civic",
+    "p6": "Contributing mana to a core earns <strong>personal status</strong>: recognition or a title from that city, scaled to what an individual has put in. Separately, a city’s overall core strength sets its <strong>civic status</strong>: how influential that settlement is relative to others. The two compound. The same personal contribution means more, and is worth more, in a city that is already strong, which gives players a real reason to be selective about where they invest.",
+    "questions": {
+      "summary": "Open questions · Cosmology",
+      "li1": "Who actually decides how a city’s core mana gets spent: growth versus public services like storage vaults (see <a href=\"systems/mana.html\">Mana Economy</a>)? An NPC authority, a player- or guild-run council, or something contested in PvP over control of the core itself?",
+      "li2": "Are there natural mana sources in the wild, independent of any city’s core (ley lines, ruins, sites tied to whatever existed before cities), or is every drop of mana in the world ultimately traceable to a city’s cultivation effort?",
+      "li3": "The racial and factional shape of the world. A Lineage 2-style multi-faction political landscape is the working assumption, not yet designed; see <a href=\"#factions\">Factions</a>.",
+      "li4": "How visually distinct “thriving” and “decaying” territory should be, since it is meant to be a legible, load-bearing signal to players, not just flavour."
+    }
+  },
+  "locations": {
+    "title": "Locations",
+    "p1": "The first real geography exists: a single island continent. The names below are <strong>working labels</strong> from the map data, not lore; they will be renamed when the fiction catches up. Distances are measured from the map’s north-west corner, with X running east and Y running south.",
+    "strong": "World map",
+    "span": "The hand-drawn map of the island will appear here.",
+    "small": "Art: not added yet",
+    "h3_1": "The land",
+    "p2": "A single island continent, <strong>33.2 × 24.2 km</strong> (about 800 km²). Sea level is at 0 m, the lowest sea floor at −379 m and the highest peak at <strong>+1669 m</strong>. A wide belt of gentle plains in the middle (250–450 m) is walled in by mountains in the north and east and opens to the sea in the west and south. The south-west is a ragged coast of bays and peninsulas. The mountains touch the north and east edges of the map.",
+    "p3": "Regions a player can be sent to:",
+    "li1": "<strong>Central plains</strong>: flat open grassland at about 316 m, east of the central lake. The natural place for a first settlement.",
+    "li2": "<strong>Eastern range</strong>: a long line of peaks (1300–1600 m) with snow above about 1250 m, the roughest ground on the map.",
+    "li3": "<strong>North-western uplands</strong>: a mountain arc above the central plains, with peaks of 1000–1330 m.",
+    "li4": "<strong>South-west coast</strong>: broken shore, bays and beaches; the map’s only large stretch of sea access on foot.",
+    "h3_2": "Lakes",
+    "table": {
+      "head": {
+        "c1": "Lake (working label)",
+        "c2": "Surface",
+        "c3": "Area",
+        "c4": "Notes"
+      },
+      "r1": {
+        "c2": "273 m",
+        "c3": "10.4 km²",
+        "c4": "Big flat-bottomed basin with a 191 m waterfall on its north side"
+      },
+      "r2": {
+        "c2": "211 m",
+        "c3": "4.2 km²",
+        "c4": "Fed by <code>River_EastLake_Inflow</code> over a 55 m waterfall"
+      },
+      "r3": {
+        "c2": "102 m",
+        "c3": "0.7 km²",
+        "c4": "Close to the western shore"
+      },
+      "r4": {
+        "c2": "230 m",
+        "c3": "0.6 km²",
+        "c4": "On the northern river"
+      },
+      "r5": {
+        "c2": "401 m",
+        "c3": "0.5 km²",
+        "c4": "The highest lake"
+      }
+    },
+    "h3_3": "Rivers and falls",
+    "p4": "Thirteen rivers, 4–32 m wide, all flowing from source to the sea or a lake. The longest is <code>River_EastLake_Inflow</code> at 14.2 km.",
+    "chips-label": "Rivers (working labels)",
+    "li5": "<strong><code>Waterfall_CentralLake</code></strong>: 191 m, at (15.7 km, 9.2 km), from the northern cliffs into the central lake.",
+    "li6": "<strong><code>Waterfall_EastLake</code></strong>: 55 m, at (23.0 km, 9.7 km), from a plateau into the east lake.",
+    "li7": "<strong>Cliff lines</strong>: <code>Cliff_West_Escarpment</code> (5.2–8.3 km, 7.4–9.0 km) and <code>Cliff_CentralLake_North</code>, both dropping south.",
+    "questions": {
+      "summary": "Open questions · Locations",
+      "li1": "Which region becomes the first city, and does it sit on the plains or on a coast?",
+      "li2": "Do the lakes and rivers keep working as landmarks for the mana and desert fiction? A dry lake bed reads well as “the land before the cores”.",
+      "li3": "Real names for the rivers, lakes, ranges and the sea."
+    }
+  },
+  "factions": {
+    "title": "Factions",
+    "tbd": "No factions are written. A Lineage 2-style multi-faction political landscape is the working assumption. Each faction will get one line on who they are, what they want, how they act, and how a player meets, joins or opposes them."
+  },
+  "timeline": {
+    "title": "Timeline",
+    "tbd": "No history is written. The timeline will hold only the handful of past events the present-day game actually refers to: the backstory that explains why the world is the way a player finds it, what is happening at the moment the player logs in, and a short list of dated events."
+  },
+  "pager": {
+    "prev": "01 Concept",
+    "next": "03 Races &amp; Characters"
+  }
+}

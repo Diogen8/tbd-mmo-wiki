@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "title": "Races &amp; Characters · TBD MMO design wiki",
+    "description": "The four playable races and the notable characters of the world."
+  },
+  "intro": {
+    "crumbs": "<a href=\"index.html\">Design wiki</a> / 03 Races &amp; Characters",
+    "pill": "Lore not written yet",
+    "eyebrow": "Races &amp; Characters / 03",
+    "h1": "Four peoples, no history yet.",
+    "lede": "Four races can be chosen at character creation. Who they are, where they come from and what they want is still to be designed."
+  },
+  "races": {
+    "title": "Playable races",
+    "subtitle": "Portraits will be added by the team",
+    "strong": "Portrait",
+    "small": "Not added yet",
+    "h3_1": "Human",
+    "p1": "Origins, culture and place in the world are not written.",
+    "h3_2": "Elf",
+    "h3_3": "Dwarf",
+    "h3_4": "Orc",
+    "p2": "The racial and factional shape of the world is an open question in <a href=\"world.html#cosmology\">Cosmology</a>. A Lineage 2-style multi-faction landscape is the working assumption."
+  },
+  "characters": {
+    "title": "Notable characters",
+    "subtitle": "Quest-givers, antagonists, vendors and flavour",
+    "tbd": "No characters are written. Each notable character will get a role, one line on who they are, where they can be found, and a sentence on how they talk."
+  },
+  "pager": {
+    "prev": "02 World",
+    "next": "04 Systems · Mana Economy"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "tbd-mmo-wiki",
+  "private": true,
+  "type": "module",
+  "description": "Public design wiki of tbd-mmo, built with Eleventy and translated with i18next.",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy",
+    "check": "eleventy && node scripts/check_site.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "3.1.6",
+    "i18next": "26.4.2"
+  }
+}

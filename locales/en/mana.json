@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "Mana Economy · TBD MMO design wiki",
+    "description": "Mana as one shared resource layer: the personal pool, monster mana cores, item upkeep and city storage vaults."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / Mana Economy",
+    "eyebrow": "Systems / 04.1",
+    "h1": "Mana Economy",
+    "lede": "One shared resource under combat loot, crafting, personal power and city development. The fiction behind it lives in <a href=\"../world.html#cosmology\">Mana &amp; Cosmology</a>.",
+    "p": "A team brainstorm, ongoing since September 2026. Not agreed for build yet. It feeds directly into the crafting stones in <a href=\"progression.html\">Progression</a>."
+  },
+  "toc": {
+    "core-idea": "Core idea",
+    "personal-pool": "Personal mana pool",
+    "monster-cores": "Monster mana cores",
+    "item-upkeep": "Item upkeep",
+    "vaults": "City storage vaults"
+  },
+  "core-idea": {
+    "title": "Core idea",
+    "p": "Mana is <strong>one shared resource layer</strong> underneath combat loot, crafting, personal power and city development, not four separate currencies. Every source of mana (a personal pool, a killed monster, a city core) and every sink (a skill stone, an enchanted item, a city vault) draws from and feeds the same underlying economy."
+  },
+  "personal-pool": {
+    "title": "Personal mana pool",
+    "li1": "Every character has a mana pool that <strong>regenerates over time</strong>, fastest while offline. Conceptually close to World of Warcraft’s rested XP, but applied to the whole personal-power engine, not just experience.",
+    "li2": "The maximum pool size grows with level and gear.",
+    "li3": "<em>Idea, not yet designed:</em> a “mana compression” skill or stat that raises the pool cap and/or how many ongoing draws (item upkeep, city vaults) a character can sustain at once."
+  },
+  "monster-cores": {
+    "title": "Monster mana cores",
+    "p1": "Every monster carries a mana core. Its <strong>quality and purity scale with the monster’s power</strong>: weak creatures yield common, impure cores; strong or rare ones yield clean, high-quality cores.",
+    "p2": "At the kill, the player chooses one of two outcomes:",
+    "h3_1": "Destroy the core",
+    "p3": "Its mana leaks into the corpse and stabilizes it. Result: an intact corpse, with normal loot and materials.",
+    "h3_2": "Extract it intact",
+    "p4": "The corpse vanishes, because the core was what gave the creature its materiality in the first place. Result: the core itself, as an item.",
+    "p5": "An extracted core can be <strong>absorbed</strong> into the player’s own pool, <strong>donated</strong> to a city’s core, or used directly in <strong>crafting</strong>.",
+    "h3_3": "Raw versus processed cores",
+    "li1": "A freshly extracted, unprocessed core is <strong>stable</strong>. It doesn’t leak on its own and can be banked or traded indefinitely, which is what makes raw cores work as a stable currency.",
+    "li2": "Once a core is <strong>processed</strong> into something (a skill stone, an item’s enchantment), it starts leaking mana over time by design. See item upkeep below, and the stones’ own depletion rule in <a href=\"progression.html#stones\">Progression</a>.",
+    "h3_4": "Where skill stones come from",
+    "p6": "The Novice and Master stones from <a href=\"progression.html#stones\">Progression</a> are crafted from processed mana cores, and a stone’s tier is set by the quality of the core it is made from. Master stones therefore need cores from strong or rare monsters: stone rarity is tied directly to high-end PvE difficulty, not an arbitrary drop-rate knob."
+  },
+  "item-upkeep": {
+    "title": "Item upkeep",
+    "p1": "An enchanted item, such as a magic sword, carries an embedded core that depletes the same way a processed stone does. When it runs dry, the item stops working. <strong>Repair means socketing in a new core</strong> (or however many the item needs), not risking the item outright the way a failed Lineage 2-style enchant would.",
+    "p2": "The failure mode stays “needs resupply” rather than “can be destroyed”, while anyone wearing enchanted gear creates standing demand for mana cores, which feeds straight back into the choice at the kill."
+  },
+  "vaults": {
+    "title": "City storage vaults",
+    "p": "Cities can offer vaults that keep stored or equipped items charged directly from the <strong>city’s own core</strong>, instead of the owner’s personal pool.",
+    "li1": "This is a real expenditure for the city. It draws down the same core that sustains the surrounding land (see <a href=\"../world.html#cosmology\">Cosmology</a>), so a city has to balance its own growth and survival against how generous its public services are.",
+    "li2": "It makes a city’s strength a concrete, daily-use benefit rather than just a status symbol: a real reason to invest in one settlement over another. The spirit is Lineage 2’s castle and territory stakes, expressed through infrastructure instead of sieges.",
+    "questions": {
+      "summary": "Open questions · Mana Economy",
+      "li1": "Governance: who decides how a city’s core mana gets spent (growth, vaults or other services)? The same question is open in <a href=\"../world.html#cosmology\">Cosmology</a>.",
+      "li2": "Does a raw core drop on death?",
+      "li3": "<strong>Resolved:</strong> yes, but only under the harshest death tier, killed by another player while carrying PK points. See <a href=\"pvp.html#resource-loss\">PvP, Robbery &amp; PK</a>.",
+      "li4": "Real numbers: regeneration rate, offline multiplier, vault upkeep cost against a city core’s own growth rate.",
+      "li5": "Does the personal pool cap interact with the passive tree’s affinity nodes (see <a href=\"progression.html#passive-tree\">Progression</a>), or are they independent systems?"
+    }
+  },
+  "pager": {
+    "prev": "03 Races &amp; Characters",
+    "next": "Character Stats"
+  }
+}
