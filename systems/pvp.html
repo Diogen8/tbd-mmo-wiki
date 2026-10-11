@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PvP, Robbery &amp; PK · TBD MMO design wiki</title>
+<meta name="description" content="Economic open-world PvP: crime states, stolen cargo, sheriffs and warrants, persistent PK points, outlaw refuges and city wars.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script>try{var t=localStorage.getItem('wiki-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer src="../assets/wiki.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="rail">
+  <div class="rail-head">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-name">TBD MMO<small>Design wiki · working title</small></span></a>
+    <button type="button" class="theme-toggle">Theme: system</button>
+  </div>
+  <div class="rail-label">Design wiki</div>
+  <nav aria-label="Wiki sections">
+    <ol>
+      <li><a href="../index.html#concept"><span>01</span>Concept</a></li>
+      <li><a href="../world.html"><span>02</span>World</a></li>
+      <li><a href="../races.html"><span>03</span>Races &amp; Characters</a></li>
+      <li><a href="../index.html#systems" aria-current="true"><span>04</span>Systems</a>
+        <ul>
+          <li><a href="../systems/mana.html">Mana Economy</a></li>
+          <li><a href="../systems/stats.html">Character Stats</a></li>
+          <li><a href="../systems/combat.html">Combat</a></li>
+          <li><a href="../systems/progression.html">Progression</a></li>
+          <li><a href="../systems/pvp.html" aria-current="page">PvP, Robbery &amp; PK</a></li>
+          <li><a href="../systems/world-progression.html">World Progression</a></li>
+          <li><a href="../systems/inventory-economy.html">Inventory &amp; Economy</a></li>
+          <li><a href="../systems/social-guilds.html">Social &amp; Guilds</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#status"><span>05</span>Status</a></li>
+    </ol>
+  </nav>
+  <div class="rail-note"><span class="phase-dot"></span>Early development<p>Everything here is a draft and will change.</p></div>
+</aside>
+<main id="main">
+<div class="topline"><span><a href="../index.html">Design wiki</a> / <a href="../index.html#systems">04 Systems</a> / PvP, Robbery &amp; PK</span><span class="tag draft">Draft</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">Systems / 04.5</div>
+    <h1>PvP, Robbery &amp; PK</h1>
+  </div>
+  <p class="lede">Fighting back makes it a fight. Killing someone who never fought back makes you a PK, and that follows you.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#core-idea">Core idea</a></li>
+    <li><a href="#ally-tiers">Ally tiers</a></li>
+    <li><a href="#crime-states">Crime states</a></li>
+    <li><a href="#mutual-vs-pk">Mutual PvP versus PK</a></li>
+    <li><a href="#resource-loss">Resource loss on death</a></li>
+    <li><a href="#stolen-cargo">Stolen cargo</a></li>
+    <li><a href="#escape">Wanted robber escape</a></li>
+    <li><a href="#sheriffs">Sheriffs and warrants</a></li>
+    <li><a href="#pk-points">PK points</a></li>
+    <li><a href="#recovery">PK recovery services</a></li>
+    <li><a href="#refuge">Outlaw refuge</a></li>
+    <li><a href="#tracking">Sheriff tracking</a></li>
+    <li><a href="#city-wars">City wars</a></li>
+    <li><a href="#safeguards">Safeguards</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>A team brainstorm from September 2026. Not agreed for build yet. This page describes intended game rules, not how anything behaves today.</p>
+
+  <h2 id="core-idea">Core idea</h2>
+  <p>Open-world PvP grows out of the resource economy instead of living only in a separate arena. Finite deposits, independent city markets and valuable cargo give players reasons to transport resources, and other players reasons to protect or steal them. See <a href="world-progression.html">World Progression</a>.</p>
+  <p>The intended roles emerge from that loop:</p>
+  <ul class="chips"><li>Gatherer / trader</li><li>Escort</li><li>Robber</li><li>Sheriff</li><li>PK</li></ul>
+  <p>Fighting back turns an attack into mutual PvP. Killing somebody who never accepted the fight is PK and carries much harsher consequences. Robbery, criminal status and stolen-property status are related but stay separate systems.</p>
+
+  <h2 id="ally-tiers">Ally tiers</h2>
+  <p>From narrowest to widest, all mutually protective:</p>
+  <ol>
+    <li><strong>Party</strong>: the tightest, always-on group.</li>
+    <li><strong>Guild</strong>: a persistent organization above ad-hoc parties.</li>
+    <li><strong>City</strong>: everyone who belongs to the same city.</li>
+  </ol>
+  <p>Allied projectiles and hostile effects pass through allies without colliding, per <a href="combat.html#projectiles">Combat</a>. Members of the same city can’t normally attack each other. Duels, civil war, rebellion and other exceptions need explicit relationship states and are not designed yet.</p>
+
+  <h2 id="crime-states">Crime states</h2>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">State</th><th scope="col">Meaning</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Neutral</strong></td><td>No current criminal or combat state</td></tr>
+      <tr><td><strong>Aggressor</strong></td><td>Attacked a neutral player</td></tr>
+      <tr><td><strong>Combatant</strong></td><td>Taking part in mutually accepted PvP</td></tr>
+      <tr><td><strong>Wanted</strong></td><td>Carrying the temporary consequences of a robbery</td></tr>
+      <tr><td><strong>PK</strong></td><td>Committed an unjustified player kill</td></tr>
+    </tbody>
+  </table>
+</div>
+<article class="prose">
+  <p>Aggressor, Combatant and Wanted are temporary. PK comes from persistent PK points and does not disappear on an ordinary timer or on death. The intended transitions:</p>
+  <pre class="flow">Neutral
+  → Aggressor        attack a neutral player
+
+Aggressor
+  → Combatant        the victim fights back
+  → PK               kill a victim who did not fight back
+  → Neutral          aggression expires without a kill
+
+Combatant
+  → Wanted           win the fight and take dropped cargo
+  → Neutral          combat expires without robbery
+
+Wanted
+  → Neutral          reach an eligible city
+  → Captured         defeated by an authorized sheriff
+
+PK
+  → PK               ordinary death does not clear PK points
+  → lower PK state   partial reduction through designed recovery paths</pre>
+  <p>Declared wars, duels and similar legal relationships bypass the normal crime transitions. Their loot rules are still open.</p>
+
+  <h2 id="mutual-vs-pk">Mutual PvP versus PK</h2>
+  <div class="grid-2">
+    <div class="card">
+      <h3>Mutual fight and robbery</h3>
+      <ol>
+        <li>A attacks a resource carrier, B. A becomes Aggressor.</li>
+        <li>B fights back; both become Combatants.</li>
+        <li>A kills B and takes eligible dropped resources.</li>
+        <li>The resources become stolen cargo, and A becomes Wanted.</li>
+      </ol>
+      <p>Because B fought back, the kill is PvP, not PK. Taking B’s property is still a robbery, and gives sheriffs a temporary right to pursue A.</p>
+    </div>
+    <div class="card">
+      <h3>Unjustified kill</h3>
+      <ol>
+        <li>A attacks B.</li>
+        <li>B does not fight back.</li>
+        <li>A kills B.</li>
+        <li>A receives PK points and becomes PK (Chaotic).</li>
+      </ol>
+      <p>The distinction comes from who actually took part in the fight, as the server saw it, not from what either player’s client claims.</p>
+    </div>
+  </div>
+
+  <h2 id="resource-loss">Resource loss on death</h2>
+  <p>Only a portion of eligible carried resources drops. <strong>Equipped gear is never lost</strong> through this system.</p>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">Death</th><th scope="col">What can be lost</th></tr></thead>
+    <tbody>
+      <tr><td>Killed by a monster</td><td>Nothing</td></tr>
+      <tr><td>Killed by another player, without PK points</td><td>A portion of carried crafting resources; raw mana cores stay safe</td></tr>
+      <tr><td>Killed by another player while PK</td><td>A portion of crafting resources and raw mana cores</td></tr>
+    </tbody>
+  </table>
+</div>
+<article class="prose">
+  <p>Exact percentages, protected slots, minimum values and exemptions are open. The loss must make transport meaningful without letting one defeat erase weeks of progress.</p>
+
+  <h2 id="stolen-cargo">Stolen cargo</h2>
+  <p>Resources taken from another player keep their history. “Stolen” is a property of the cargo, not a crime state of the character. A stolen batch remembers which crime it came from, its original owner, the resource and quantity, when it was taken, which city has jurisdiction, and its legal status. One batch can cover a quantity, so the history isn’t copied onto every unit.</p>
+  <p>Until it is legalized, stolen cargo cannot be:</p>
+  <ul>
+    <li>sold to ordinary traders;</li>
+    <li>deposited in an ordinary city warehouse;</li>
+    <li>laundered by passing it through another player;</li>
+    <li>cleaned by splitting or merging stacks;</li>
+    <li>cleaned by dropping it on the ground;</li>
+    <li>cleaned by logging out, dying or reconnecting.</li>
+  </ul>
+  <p>Discarded or transferred cargo keeps its crime identity. These rules are kept by the server, not by how the inventory looks on screen.</p>
+
+  <h2 id="escape">Wanted robber escape</h2>
+  <p>Wanted creates a short pursuit with a clear finish line. A robber who reaches an eligible city’s boundary loses Wanted and enters the protection of the city safe zone. Sheriffs lose the right to attack that character there.</p>
+  <p>Entering the city does <strong>not</strong> legalize stolen cargo. The robber must find a fence, such as an NPC thieves’ guild, and pay to turn stolen cargo into ordinary resources. Arriving and laundering are two separate steps:</p>
+  <pre class="flow">reach a city       → clears Wanted
+use a cargo fence  → clears the cargo’s stolen history</pre>
+  <p>The robber’s goal becomes “escape to civilization and disappear into the crowd”, while a separate criminal economy lives inside the city. Fast travel, logging out and other shortcuts don’t count as physically reaching the city, and rules for disconnecting mid-combat are needed before this loop is ready.</p>
+
+  <h2 id="sheriffs">Sheriffs and warrants</h2>
+  <p>A sheriff receives authority from a city. It is not a general licence to attack anyone: the city issues a <strong>warrant</strong> tied to a crime and its target. A warrant names the issuing city, the target, the crime and its class, and an expiry (temporary for Wanted; none while PK points remain).</p>
+  <p>An authorized sheriff may attack the named target without becoming an Aggressor or PK. A Wanted warrant ends when the robber reaches a city, is captured, or the pursuit expires. PK warrants stay open to every authorized sheriff while the target keeps PK points.</p>
+  <p>When a sheriff defeats a robber or PK:</p>
+  <ul>
+    <li>the stolen goods are confiscated and sealed as recovered cargo, not ordinary sheriff inventory;</li>
+    <li>the sheriff can’t use, sell, transfer or legalize them;</li>
+    <li>the cargo goes to a city recovery service;</li>
+    <li>the original owner gets it back immediately, or through an offline recovery vault;</li>
+    <li>the sheriff receives a bounded city reward and sheriff reputation.</li>
+  </ul>
+  <p>Rewards are based on the real recovered value and the crime’s severity. They must not create money from collaborators staging fake robberies.</p>
+
+  <h2 id="pk-points">PK points</h2>
+  <p>An unjustified kill adds persistent PK points: a global criminal history, not a temporary city pursuit. While PK:</p>
+  <ul>
+    <li>lawful cities deny entry, and ordinary safe zones are no escape route;</li>
+    <li>every authorized sheriff can hold a standing warrant;</li>
+    <li>sheriff tracking can periodically reveal an approximate location;</li>
+    <li>ordinary death, death to a monster or to a non-sheriff player, and cargo legalization don’t remove PK points.</li>
+  </ul>
+  <p>Only a kill by an authorized sheriff with a valid PK warrant, confirmed by the server, can reduce points through combat, and it removes only part of the total. One arrest must not clear a serial PK. Arranged arrests are an obvious exploit, so reductions and rewards need diminishing returns, or refusal, for repeated attacker-and-target pairs, party or guild associates, and other strong signs of collusion.</p>
+
+  <h2 id="recovery">PK recovery services</h2>
+  <p>Cargo fences and PK recovery are separate services, even if one NPC eventually offers both.</p>
+  <div class="grid-2">
+    <div class="card"><h3>Cargo fence</h3><p>Legalizes stolen resources. Never changes PK points.</p></div>
+    <div class="card"><h3>Criminal fixer</h3><p>Reduces PK points for money. Never changes cargo ownership.</p></div>
+  </div>
+  <p>A criminal fixer is a possible non-combat money sink. Its cost should rise steeply with PK points, and one visit removes only a bounded amount. It must not make PK a trivial fee for wealthy players, and reaching the fixer is meant to be dangerous because lawful cities refuse PK entry.</p>
+
+  <h2 id="refuge">Outlaw refuge</h2>
+  <p>Fences and fixers can live in a remote outlaw refuge. With a single static entrance, sheriffs could camp the NPC and kill every PK before they reached it, so the refuge has a small protected area and a one-way exit. Inside the protected area:</p>
+  <ul>
+    <li>all PvP is disabled, and sheriffs may enter but can’t attack;</li>
+    <li>PK players can’t attack outward, and projectiles or pending attacks crossing the boundary are cancelled;</li>
+    <li>sheriff radar reports only that its target reached a refuge;</li>
+    <li>Wanted, PK points, warrants and stolen cargo are not cleared by the boundary.</li>
+  </ul>
+  <p>The refuge is not a full criminal city: no ordinary market, warehouse, auction, crafting centre or free travel network.</p>
+  <h3>Randomized exit</h3>
+  <p>After using the refuge, a PK leaves through an NPC-controlled random teleport instead of walking back out. Sheriffs can’t camp one known exit, and PKs can’t attack at the boundary and step back into safety. The destination is unknown, chosen within a broad area, and checked to be on walkable ground; outside cities and safe zones; out of water, geometry and unreachable terrain; not right beside another player; not on a strategic deposit or world event; and not one of the character’s recent exits.</p>
+  <p>The player can’t choose the destination. The teleport may cost money, and the refuge can impose a return cooldown. Sheriff radar may be suppressed briefly after the exit so the escape has value. That is tracking protection, not invulnerability: the standing warrant and radar resume afterwards.</p>
+  <pre class="flow">survive the route to the refuge
+→ enter the protected area; the current chase ends
+→ use cargo or PK-recovery services
+→ leave through an unpredictable one-way teleport
+→ return to the dangerous world, remaining PK status intact</pre>
+
+  <h2 id="tracking">Sheriff tracking</h2>
+  <p>An ordinary Wanted robbery is a local chase with no global radar; sheriffs start from the crime scene and the observed escape direction. PK targets could hide forever in a large world, so standing PK warrants allow periodic radar. It must not behave like continuous GPS:</p>
+  <ul>
+    <li>it has a substantial cooldown;</li>
+    <li>it reports a region, not exact coordinates, and the result goes stale as the PK moves;</li>
+    <li>higher PK severity may shrink the uncertainty;</li>
+    <li>it loses the signal inside an outlaw refuge, and briefly after a refuge teleport.</li>
+  </ul>
+
+  <h2 id="city-wars">City wars</h2>
+  <p>A city’s ruler can declare war on another city. War starts when the target city accepts, or when another explicit escalation rule is met. During an active war, kills between members of the two cities add no PK points and count toward a separate PvP score. Duration, escalation, cease-fire, experience loss, captured cargo and larger territory contests are open. Wars should eventually tie into city resource routes and mana-core infrastructure, not become an unrelated scoreboard.</p>
+
+  <h2 id="safeguards">Safeguards</h2>
+  <ul>
+    <li>Crime transitions use attacks, retaliation, kills and transfers as the server observed them.</li>
+    <li>Disconnecting never clears a pursuit, PK points or cargo history.</li>
+    <li>A robber can’t clean cargo through an innocent go-between.</li>
+    <li>A sheriff can’t legalize or keep recovered property, and a sheriff licence covers only valid warrant targets.</li>
+    <li>Repeated collusive sheriff kills can’t farm rewards or rapidly clear PK.</li>
+    <li>Safe-zone boundaries reject attacks in both directions.</li>
+    <li>Entering a refuge ends one chase but never erases criminal history.</li>
+    <li>Paying to reduce PK scales enough to stay a real penalty.</li>
+  </ul>
+</article>
+
+<details class="questions">
+  <summary>Open questions · PvP, Robbery &amp; PK</summary>
+  <ul>
+    <li>The exact retaliation window that turns aggression into mutual PvP.</li>
+    <li>Duration and jurisdiction rules for ordinary Wanted warrants, and whether every lawful city clears Wanted or only selected ones.</li>
+    <li>Resource-loss percentages and protected inventory rules.</li>
+    <li>Whether cargo taken in a declared war becomes legal spoils or stays stolen.</li>
+    <li>PK points per unjustified kill, and scaling for repeated victims.</li>
+    <li>Sheriff reduction amount, cooldown and anti-collusion rules.</li>
+    <li>The criminal fixer’s price curve, and whether money alone can ever clear all PK.</li>
+    <li>Refuge count, placement, entry cooldown and teleport radius.</li>
+    <li>Radar cooldown, uncertainty radius, cost, and whether the target is warned.</li>
+    <li>Whether a non-lethal arrest becomes possible later, or death stays the only capture.</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="Next and previous pages">
+  <a class="prev" href="progression.html"><small>← Previous</small>Progression</a>
+  <a class="next" href="world-progression.html"><small>Next →</small>World Progression</a>
+</nav>
+<footer class="site-footer">
+  <span>Design notes are drafts, not promises. Gaps are marked “Not designed yet”.</span>
+  <span><a href="../index.html#status">Project status</a></span>
+</footer>
+</main>
+</div>
+</body>
+</html>

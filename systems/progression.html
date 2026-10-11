@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Progression · TBD MMO design wiki</title>
+<meta name="description" content="Three progression axes: a non-combat passive tree, use-based weapon mastery, and crafting through Novice and Master stones.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script>try{var t=localStorage.getItem('wiki-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer src="../assets/wiki.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="rail">
+  <div class="rail-head">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-name">TBD MMO<small>Design wiki · working title</small></span></a>
+    <button type="button" class="theme-toggle">Theme: system</button>
+  </div>
+  <div class="rail-label">Design wiki</div>
+  <nav aria-label="Wiki sections">
+    <ol>
+      <li><a href="../index.html#concept"><span>01</span>Concept</a></li>
+      <li><a href="../world.html"><span>02</span>World</a></li>
+      <li><a href="../races.html"><span>03</span>Races &amp; Characters</a></li>
+      <li><a href="../index.html#systems" aria-current="true"><span>04</span>Systems</a>
+        <ul>
+          <li><a href="../systems/mana.html">Mana Economy</a></li>
+          <li><a href="../systems/stats.html">Character Stats</a></li>
+          <li><a href="../systems/combat.html">Combat</a></li>
+          <li><a href="../systems/progression.html" aria-current="page">Progression</a></li>
+          <li><a href="../systems/pvp.html">PvP, Robbery &amp; PK</a></li>
+          <li><a href="../systems/world-progression.html">World Progression</a></li>
+          <li><a href="../systems/inventory-economy.html">Inventory &amp; Economy</a></li>
+          <li><a href="../systems/social-guilds.html">Social &amp; Guilds</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#status"><span>05</span>Status</a></li>
+    </ol>
+  </nav>
+  <div class="rail-note"><span class="phase-dot"></span>Early development<p>Everything here is a draft and will change.</p></div>
+</aside>
+<main id="main">
+<div class="topline"><span><a href="../index.html">Design wiki</a> / <a href="../index.html#systems">04 Systems</a> / Progression</span><span class="tag draft">Draft</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">Systems / 04.4</div>
+    <h1>Progression</h1>
+  </div>
+  <p class="lede">Three separate axes, deliberately not stacked on the same power source, so they never compete or duplicate each other.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#core-idea">Core idea</a></li>
+    <li><a href="#passive-tree">The passive tree</a></li>
+    <li><a href="#reset">Reset (soft prestige)</a></li>
+    <li><a href="#never-gate">Why affinities never gate</a></li>
+    <li><a href="#stones">Crafting stones</a></li>
+    <li><a href="#anti-grind">Anti-grind</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>A team brainstorm, ongoing since September 2026. Not agreed for build yet.</p>
+
+  <h2 id="core-idea">Core idea</h2>
+  <ol>
+    <li><strong>Passive tree</strong>: non-combat and low-power; it shapes <em>how fast</em> you grow. Inspired by Path of Exile’s tree, but the tree itself carries almost no direct power.</li>
+    <li><strong>Use-based weapon mastery</strong>: fight with a one-handed sword, get better with one-handed swords. Diminishing returns per kill and target resist grinding. Gains come from hits the server confirms, not from what a client reports. Mastery thresholds unlock weapon-specific active skills.</li>
+    <li><strong>Crafting, through Novice and Master stones</strong>: governs crafting skill growth specifically; a concrete two-item, three-tier system described below.</li>
+  </ol>
+  <p>The rough split: <strong>stones set the floor and raise the ceiling</strong>, <strong>practice fills in the ceiling</strong>, and the <strong>passive tree sets the direction</strong>, meaning how fast you grow and toward what.</p>
+
+  <h2 id="passive-tree">The passive tree</h2>
+  <ul>
+    <li>Nodes are <strong>diplomacy, trade and survival</strong>, explicitly not combat. Combat power comes from weapon mastery, not from the tree. That is what makes a full tree wipe on reset tolerable: resetting costs social and economic reach, never your ability to fight.</li>
+    <li>Individual nodes give almost nothing numerically. Weight comes from breadth and from qualitative unlocks (dialogue options, trade routes, recipes), not from stacking small percentages. A numerically weak node still needs to <em>do</em> something distinct, or the tree feels pointless even in aggregate. The node catalogue is not designed yet.</li>
+    <li><strong>Affinity nodes</strong> don’t grant power directly. They raise an <em>affinity</em> (for example Light) that speeds up mastery gain for related skills, and possibly crafting-stone effectiveness too (an open question). This ties the tree to the other systems instead of leaving it standalone.
+      <ul><li><strong>Affinities must accelerate, never gate.</strong> Zero affinity in something still trains it, just slower. This is the one hard constraint; see below.</li></ul>
+    </li>
+    <li><strong>Level-up</strong> gives a small stat increment and one tree point. Linear, and not the main power source.</li>
+  </ul>
+
+  <h2 id="reset">Reset (soft prestige)</h2>
+  <ul>
+    <li>At level 100, resetting is <strong>optional</strong>. A player can stay at 100 indefinitely and keep growing through gear and weapon mastery. It is not a gate on further progression.</li>
+    <li>On reset, level returns to 1 and <strong>the tree wipes completely</strong> and must be replanned. Weapon mastery and crafting-stone progress are <strong>not</strong> touched: nothing about combat or crafting capability is lost.</li>
+    <li>What is kept: a <strong>flat, one-time permanent bonus</strong> to the tree’s point budget per reset, currently framed as +1. Growth across resets is additive, not multiplicative, so it doesn’t blow out into an unbounded veteran-versus-newcomer gap.</li>
+    <li>The narrative payoff: a character can genuinely redirect across a “second life”. Level to 100 as a warrior, then respec the tree toward Light affinity on the second pass, without losing what the first life built.</li>
+  </ul>
+
+  <h2 id="never-gate">Why affinities must never gate</h2>
+  <p>EVE Online once had almost this exact mechanic: eleven “Learning” skills that boosted training speed for everything else. CCP removed them in December 2010. They had become a mandatory tax new players felt they had to train before doing anything else, they added no real strategic choice, and they let dedicated players skip ahead of the intended pace (<a href="https://www.eveonline.com/news/view/learning-skills-are-going-away-1" rel="noopener">Learning skills are going away</a>).</p>
+  <blockquote><p>An affinity of zero must mean “slower”, never “blocked” or so slow that it is effectively blocked.</p></blockquote>
+
+  <h2 id="stones">Crafting: Novice and Master stones</h2>
+  <p>Two consumable items, both made of <strong>crystallized mana</strong>. See <a href="../world.html#cosmology">Cosmology</a> for what that means in the world, and <a href="mana.html#monster-cores">Mana Economy</a> for where their material comes from.</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="eyebrow">Sets the floor</div>
+      <h3>Novice Stone</h3>
+      <p>Equip it and it passively teaches a crafting skill up to a soft threshold of acceptable competence. EVE’s “learn while you sleep” idea, but capped.</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">Raises the ceiling</div>
+      <h3>Master Stone</h3>
+      <p>For top-tier mastery. Worn continuously, it slowly <em>raises</em> the practice ceiling rather than granting progress directly. Hands then fill the new headroom.</p>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Only hands from there.</strong> Past the Novice Stone’s cap, progress needs actual crafting, with the same diminishing-returns shape as weapon mastery. Practice alone has its own natural ceiling and never reaches true mastery, by design.</li>
+    <li>Stone and practice are both required at the top. Neither alone gets there.</li>
+  </ul>
+
+  <h3>Depletion and the single-slot rule</h3>
+  <ul>
+    <li><strong>Both stones drain just from being equipped.</strong> They are crystallized mana, so they constantly leak, whether the wearer is asleep, crafting, fighting or idle. The drain is tied to time worn, not to use.</li>
+    <li><strong>Only one stone, of either tier, can be active at a time</strong>, across all skills. This is the specialization lever: pushing a Master Stone toward mastery in one craft means you can’t bootstrap a second skill with a Novice Stone without unequipping the Master Stone, which pauses its ceiling-raising.</li>
+    <li>A tension worth keeping: carrying a rare, draining Master Stone into risky content is a real decision between exposure and progress. For raw mana cores the death rules are settled in <a href="pvp.html#resource-loss">PvP, Robbery &amp; PK</a>; whether an equipped stone can be lost the same way is still open.</li>
+  </ul>
+
+  <h2 id="anti-grind">Anti-grind (weapon mastery)</h2>
+  <p>Diminishing returns per kill aren’t enough on their own; the Elder Scrolls “safe grinding” complaints and Ultima Online macro-training are the failure modes to avoid. At minimum it also needs experience against far-below-level targets tapering toward zero, and/or a per-session or daily soft cap. The exact curve is not designed yet.</p>
+
+  <h2 id="pace">Pace</h2>
+  <div class="tbd"><p><strong>Not designed yet.</strong></p></div>
+</article>
+
+<details class="questions">
+  <summary>Open questions · Progression</summary>
+  <ul>
+    <li>The reset bonus size (+1 or larger) depends on an earlier decision: should the tree ever be fully completable by a dedicated player, or always stay a trade-off, as in Path of Exile? Pick the philosophy first, then size the number from the total node count.</li>
+    <li>Total tree size and the node catalogue.</li>
+    <li>The exact anti-grind curve for weapon mastery.</li>
+    <li>Do affinity boosts apply only to future training, or can they be reallocated some other way? The current framing is future only.</li>
+    <li>The soft cap for the Novice threshold, and how much headroom a Master Stone opens over what interval.</li>
+    <li class="resolved">Where do stones come from?</li>
+    <li><strong>Resolved:</strong> crafted from monster mana cores; the source core’s quality sets the stone’s tier. Still open: the exact acquisition and crafting cost, and how it interacts with the wider economy.</li>
+    <li>Can a stone actually be lost (death, theft), or is it safe once acquired? That decides how much weight the risk of carrying it really has.</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="Next and previous pages">
+  <a class="prev" href="combat.html"><small>← Previous</small>Combat</a>
+  <a class="next" href="pvp.html"><small>Next →</small>PvP, Robbery &amp; PK</a>
+</nav>
+<footer class="site-footer">
+  <span>Design notes are drafts, not promises. Gaps are marked “Not designed yet”.</span>
+  <span><a href="../index.html#status">Project status</a></span>
+</footer>
+</main>
+</div>
+</body>
+</html>

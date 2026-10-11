@@ -1,0 +1,170 @@
+{
+  "$comment": "Which design notes each wiki section renders, with the git blob hash of each note when the section was last written. scripts/check_sync.mjs compares these with a checkout of the source repository. 'omitted' records what was left out on purpose, so the next editor doesn't re-add it.",
+  "source": {
+    "repo": "Diogen8/tbd-mmo-client",
+    "root": "docs/Design"
+  },
+  "sections": [
+    {
+      "id": "concept",
+      "page": "index.html#concept",
+      "sources": {
+        "docs/Design/Concept.md": "90e531f47d336d93d75a3def5b0d0ad185b46171"
+      },
+      "omitted": [
+        "The example bullets under Core Loop (they describe today's client controls, not design)",
+        "Links to the roadmap and the spec folder"
+      ]
+    },
+    {
+      "id": "hub-world",
+      "page": "index.html#world-h",
+      "sources": {
+        "docs/Design/World/README.md": "3177fe4a72f59d2630166d4f08f405e7e9e487e6"
+      },
+      "omitted": [
+        "The vault's authoring convention (only the document list and statuses feed the hub cards)"
+      ]
+    },
+    {
+      "id": "hub-systems",
+      "page": "index.html#systems",
+      "sources": {
+        "docs/Design/Systems/README.md": "e47fa55c5986eb570ae7e031d83642caa1993bed"
+      },
+      "omitted": [
+        "The vault's authoring convention (only the system list and statuses feed the hub cards)"
+      ]
+    },
+    {
+      "id": "cosmology",
+      "page": "world.html#cosmology",
+      "sources": {
+        "docs/Design/World/Cosmology.md": "d3be9bf8be8036695bcf5b334a9e0b3ad30535f5"
+      },
+      "omitted": []
+    },
+    {
+      "id": "locations",
+      "page": "world.html#locations",
+      "sources": {
+        "docs/Design/World/Locations.md": "0d5bab1b8ffb23eb874607059cce7f61306cf41a"
+      },
+      "omitted": [
+        "How the map was imported and which files built it",
+        "The spawn coordinate and the spawn tooling note in the open questions",
+        "The original stub convention line"
+      ]
+    },
+    {
+      "id": "factions",
+      "page": "world.html#factions",
+      "sources": {
+        "docs/Design/World/Factions.md": "e36f6cd978f0a1ca606b004dc6a6ed45926c8da7"
+      },
+      "omitted": []
+    },
+    {
+      "id": "timeline",
+      "page": "world.html#timeline",
+      "sources": {
+        "docs/Design/World/Timeline.md": "710e8e1c003b72dfa0b1ae597337349d5fc23d24"
+      },
+      "omitted": []
+    },
+    {
+      "id": "races",
+      "page": "races.html#races",
+      "sources": {},
+      "omitted": [],
+      "note": "No design note describes the races yet. The four names are the races offered at character creation; everything else on the cards is marked Not designed yet."
+    },
+    {
+      "id": "characters",
+      "page": "races.html#characters",
+      "sources": {
+        "docs/Design/World/Characters.md": "6b1f7944e0af5e022a50f413471b2e8a30819f04"
+      },
+      "omitted": []
+    },
+    {
+      "id": "mana",
+      "page": "systems/mana.html",
+      "sources": {
+        "docs/Design/Systems/Mana.md": "dc66589ebe0945d6651f6afba1a8682d7187ba53"
+      },
+      "omitted": []
+    },
+    {
+      "id": "stats",
+      "page": "systems/stats.html",
+      "sources": {
+        "docs/Design/Systems/Stats.md": "ec17d691a5f91abeaa9858262e6495797c3cdfed"
+      },
+      "omitted": [
+        "Entity composition (component list): implementation, not design",
+        "Runtime ownership (which component owns which value): implementation, not design"
+      ]
+    },
+    {
+      "id": "combat",
+      "page": "systems/combat.html",
+      "sources": {
+        "docs/Design/Systems/Combat.md": "80e263020c78d3842dd7f25c8201db22715f26a4"
+      },
+      "omitted": [
+        "Which networking stack the server uses",
+        "The open question about the server-side implementation of hit validation"
+      ]
+    },
+    {
+      "id": "progression",
+      "page": "systems/progression.html",
+      "sources": {
+        "docs/Design/Systems/Progression.md": "419cc1add071d6f10cf3be49c27ad26e5810840b"
+      },
+      "omitted": []
+    },
+    {
+      "id": "pvp",
+      "page": "systems/pvp.html",
+      "sources": {
+        "docs/Design/Systems/PvP.md": "7f5b5ede59a93ff5323f1c1c456c4746dbadbade"
+      },
+      "omitted": [
+        "Field-by-field record layouts for stolen cargo and warrants (summarised in prose instead)"
+      ]
+    },
+    {
+      "id": "world-progression",
+      "page": "systems/world-progression.html",
+      "sources": {
+        "docs/Design/Systems/World-Progression.md": "092ddaaee91b7f3722d5f750e064c7cdfe7b35f5"
+      },
+      "omitted": []
+    },
+    {
+      "id": "inventory-economy",
+      "page": "systems/inventory-economy.html",
+      "sources": {
+        "docs/Design/Systems/Inventory-Economy.md": "e818c5a3107ab47b91f9e64f82fa826531fce43e"
+      },
+      "omitted": [
+        "The link to the client's current inventory implementation"
+      ]
+    },
+    {
+      "id": "social-guilds",
+      "page": "systems/social-guilds.html",
+      "sources": {
+        "docs/Design/Systems/Social-Guilds.md": "c6b21d11032bc515644ad2c3a9410e173c8c2a26"
+      },
+      "omitted": [
+        "The protocol note about chat in the communication section"
+      ]
+    }
+  ],
+  "excluded": {
+    "docs/Design/Ideas.md": "A parking lot of maybe-someday ideas, explicitly not a plan; not published."
+  }
+}

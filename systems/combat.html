@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Combat · TBD MMO design wiki</title>
+<meta name="description" content="Hybrid tab-target and skill-shot combat: breakable locks, hit-or-miss projectiles, ally-transparent effects and the input scheme.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;display=swap">
+<link rel="stylesheet" href="../assets/wiki.css">
+<script>try{var t=localStorage.getItem('wiki-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script defer src="../assets/wiki.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="shell">
+<aside class="rail">
+  <div class="rail-head">
+    <a class="brand" href="../index.html"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-name">TBD MMO<small>Design wiki · working title</small></span></a>
+    <button type="button" class="theme-toggle">Theme: system</button>
+  </div>
+  <div class="rail-label">Design wiki</div>
+  <nav aria-label="Wiki sections">
+    <ol>
+      <li><a href="../index.html#concept"><span>01</span>Concept</a></li>
+      <li><a href="../world.html"><span>02</span>World</a></li>
+      <li><a href="../races.html"><span>03</span>Races &amp; Characters</a></li>
+      <li><a href="../index.html#systems" aria-current="true"><span>04</span>Systems</a>
+        <ul>
+          <li><a href="../systems/mana.html">Mana Economy</a></li>
+          <li><a href="../systems/stats.html">Character Stats</a></li>
+          <li><a href="../systems/combat.html" aria-current="page">Combat</a></li>
+          <li><a href="../systems/progression.html">Progression</a></li>
+          <li><a href="../systems/pvp.html">PvP, Robbery &amp; PK</a></li>
+          <li><a href="../systems/world-progression.html">World Progression</a></li>
+          <li><a href="../systems/inventory-economy.html">Inventory &amp; Economy</a></li>
+          <li><a href="../systems/social-guilds.html">Social &amp; Guilds</a></li>
+        </ul>
+      </li>
+      <li><a href="../index.html#status"><span>05</span>Status</a></li>
+    </ol>
+  </nav>
+  <div class="rail-note"><span class="phase-dot"></span>Early development<p>Everything here is a draft and will change.</p></div>
+</aside>
+<main id="main">
+<div class="topline"><span><a href="../index.html">Design wiki</a> / <a href="../index.html#systems">04 Systems</a> / Combat</span><span class="tag draft">Draft</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">Systems / 04.3</div>
+    <h1>Combat</h1>
+  </div>
+  <p class="lede">Lock on, or aim. In PvE the two are equal; against a real player, a landed aimed shot is the one that can’t be dodged by breaking the lock.</p>
+</div>
+
+<nav class="toc" aria-label="On this page">
+  <b>On this page</b>
+  <ol>
+    <li><a href="#fantasy">Fantasy</a></li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="#projectiles">Projectile collision</a></li>
+    <li><a href="#controls">Input and controls</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>A team brainstorm from September 2026, covering the targeting model, input scheme and projectile collision so far. Not agreed for build yet.</p>
+
+  <h2 id="fantasy">Fantasy</h2>
+  <div class="tbd"><p><strong>Not designed yet.</strong> One sentence on what a fight should feel like.</p></div>
+
+  <h2 id="model">Model</h2>
+  <p><strong>Hybrid target and non-target.</strong> Abilities can be cast either tab-target (lock onto an enemy, auto-hit while in range and line of sight) or non-target (a manually aimed skill-shot that hits or misses on its own trajectory). Hits and lock breaks are decided by the server, not by what a player’s client shows.</p>
+
+  <h3>Why bother with non-target at all</h3>
+  <p>Non-target demands real-time aim and reading of the opponent; tab-target doesn’t. If non-target has no real upside, players default to tab-target and the hybrid is decorative. The chosen answer is <strong>structural</strong> rather than a stat bonus:</p>
+  <ul>
+    <li><strong>Tab-target locks can be broken.</strong> Losing line of sight, exceeding the lock’s angle or range, or a dedicated evade action can drop an in-progress lock. Against a stationary or scripted target that never tries to break the lock, this never comes up: tab-target is simply reliable.</li>
+    <li><strong>Non-target is a pure hit-or-miss check.</strong> There is no lock to break. If the trajectory connects, it connects, whatever the target does after the cast.</li>
+  </ul>
+  <p>In PvE the two modes are effectively equivalent, because monsters mostly don’t contest the lock, so non-target <strong>deliberately carries little to no extra value there</strong>. In PvP, a skilled, mobile opponent can break a tab-target lock, so a landed non-target hit becomes the more <em>reliable</em> choice against a real player. The reward is “outplayed the lock”, not a bonus number, so there is no separate damage or crit modifier to balance between the two modes.</p>
+  <div class="callout"><p><strong>Considered and set aside:</strong> a flat damage or crit bonus for landed non-target hits, the way Black Desert Online rewards aimed skills. A numeric bonus would also apply in PvE, which we don’t want.</p></div>
+
+  <h2 id="projectiles">Projectile collision</h2>
+  <ul>
+    <li><strong>Allies never collide with your hostile projectiles and effects.</strong> Party, guild and same-city members (the ally tiers from <a href="pvp.html#ally-tiers">PvP, Robbery &amp; PK</a>) are excluded from the hit check entirely for damaging effects, like Overwatch’s friendly-fire-off design. This is what makes aiming practical in a crowd: you never have to worry about clipping your own team.</li>
+    <li><strong>Enemies stay solid, and body-blocking is intended.</strong> A skill-shot hits whichever enemy it reaches first along its path, including a third party who deliberately steps into the line of fire to save an ally, like League of Legends’ minion block. This is legitimate spatial counterplay: the blocker has to read the shot’s path and be there in time. It extends the “reward real-time positioning” idea from the attacker to the defending side.</li>
+    <li><strong>Rejected:</strong> binding a skill-shot so it only ever lands on its intended target, ignoring anything in the way. That would quietly turn non-target casting back into tab-target with extra steps.</li>
+  </ul>
+
+  <h2 id="controls">Input and controls</h2>
+  <ul>
+    <li><strong>Default: Target mode.</strong> Abilities cast at the currently locked target.</li>
+    <li><strong>Hotkey 1, mode toggle</strong> (a keyboard key, for example Caps Lock). Persistently switches between Target mode and Non-target mode. In Non-target mode, casts go toward the aim direction instead of a locked target.</li>
+    <li><strong>Hotkey 2, aim override</strong> (hold the right mouse button). While held, any cast fires toward the aim direction, whatever the current mode. It has no extra effect in Non-target mode, where aiming is already manual.</li>
+    <li><strong>Click-to-move.</strong> The cursor can do only one job at a time: click on the world to move, or aim a skill-shot. In Target mode the cursor is free and click-to-move works. Whenever aiming is active, persistently (Hotkey 1) or momentarily (holding Hotkey 2), the cursor is captured for aiming, movement is WASD and click-to-move is unavailable. Holding the right mouse button is the same input players already know as “hold to look around” in other action games, so it doubles naturally as the click-to-move pause.</li>
+    <li><strong>Interface.</strong> Whenever a locked target and an active aim reticle both matter (Non-target mode with a target selected, or Hotkey 2 held while a target is locked), the player sees <strong>both</strong> the target’s nameplate and health and the aim reticle at once. It is not an either/or switch.</li>
+  </ul>
+</article>
+
+<details class="questions">
+  <summary>Open questions · Combat</summary>
+  <ul>
+    <li>Exact lock-break conditions: line-of-sight loss, a maximum turn angle and/or a dedicated evade action. Which of these trips it, and does the evade need its own cooldown so it isn’t a free defensive tool?</li>
+    <li>Do all abilities support both casting modes, or are some inherently one or the other (non-target-only skill-shots, tab-target-only buffs and heals)?</li>
+    <li>Does the persistent Non-target toggle need a delay before click-to-move returns, so players can’t toggle rapidly as a movement exploit?</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="Next and previous pages">
+  <a class="prev" href="stats.html"><small>← Previous</small>Character Stats</a>
+  <a class="next" href="progression.html"><small>Next →</small>Progression</a>
+</nav>
+<footer class="site-footer">
+  <span>Design notes are drafts, not promises. Gaps are marked “Not designed yet”.</span>
+  <span><a href="../index.html#status">Project status</a></span>
+</footer>
+</main>
+</div>
+</body>
+</html>
