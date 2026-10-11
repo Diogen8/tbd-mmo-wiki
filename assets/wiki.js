@@ -1,10 +1,21 @@
-// tbd-mmo design wiki — theme switch and image lightbox.
+// tbd-mmo design wiki — theme switch, language switch and image lightbox.
 // No build step and no dependencies; every page loads this file with `defer`.
 (() => {
   const root = document.documentElement;
   const KEY = 'wiki-theme';
   const MODES = ['system', 'dark', 'light'];
-  const LABELS = { system: 'Theme: system', dark: 'Theme: dark', light: 'Theme: light' };
+  const STRINGS = {
+    en: {
+      system: 'Theme: system', dark: 'Theme: dark', light: 'Theme: light', switchTheme: 'Switch theme',
+      image: 'Full-size image', download: 'Download', original: 'Open original', close: 'Close',
+    },
+    uk: {
+      system: 'Тема: системна', dark: 'Тема: темна', light: 'Тема: світла', switchTheme: 'Змінити тему',
+      image: 'Зображення в повному розмірі', download: 'Завантажити', original: 'Відкрити оригінал', close: 'Закрити',
+    },
+  };
+  const t = STRINGS[root.lang] || STRINGS.en;
+  const LABELS = { system: t.system, dark: t.dark, light: t.light };
 
   const readMode = () => {
     try { return localStorage.getItem(KEY) || 'system'; } catch { return 'system'; }
@@ -18,7 +29,7 @@
     } catch { /* storage blocked: the choice lasts for this page only */ }
     for (const button of document.querySelectorAll('.theme-toggle')) {
       button.textContent = LABELS[mode];
-      button.setAttribute('aria-label', `${LABELS[mode]}. Switch theme`);
+      button.setAttribute('aria-label', `${LABELS[mode]}. ${t.switchTheme}`);
     }
   };
 
@@ -29,6 +40,11 @@
       mode = MODES[(MODES.indexOf(mode) + 1) % MODES.length];
       applyMode(mode);
     });
+  }
+
+  // A translation keeps every id of its original, so switching language keeps the reader's place.
+  for (const link of document.querySelectorAll('.lang-switch a')) {
+    link.addEventListener('click', () => { if (location.hash) link.hash = location.hash; });
   }
 
   // On a phone the rail is one horizontal strip; bring the current section into view.
@@ -48,12 +64,12 @@
   box.hidden = true;
   box.setAttribute('role', 'dialog');
   box.setAttribute('aria-modal', 'true');
-  box.setAttribute('aria-label', 'Full-size image');
+  box.setAttribute('aria-label', t.image);
   box.innerHTML = `
     <div class="lightbox-bar">
-      <a class="lightbox-download" download>Download</a>
-      <a class="lightbox-open" target="_blank" rel="noopener">Open original</a>
-      <button type="button" class="lightbox-close">Close ✕</button>
+      <a class="lightbox-download" download>${t.download}</a>
+      <a class="lightbox-open" target="_blank" rel="noopener">${t.original}</a>
+      <button type="button" class="lightbox-close">${t.close} ✕</button>
     </div>
     <img alt="">
     <p></p>`;

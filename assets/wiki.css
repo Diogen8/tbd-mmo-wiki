@@ -22,11 +22,15 @@
   --hero-a: #3b2f24;
   --hero-b: #16120f;
   --hero-text: #f4ead8;
-  --font-display: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
+  --font-brand: "Cinzel", "Trajan Pro", Georgia, "Times New Roman", serif;
+  --font-display: var(--font-brand);
   --font-body: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, "Cascadia Code", Consolas, "Liberation Mono", monospace;
   --radius: 12px;
 }
+
+/* Cinzel has no Cyrillic, so Ukrainian headings use Cormorant SC, the closest match. The brand stays in Cinzel. */
+:root:lang(uk) { --font-display: "Cormorant SC", Georgia, "Times New Roman", serif; }
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -109,9 +113,9 @@ a:hover { text-decoration-thickness: 2px; }
   width: 40px; height: 42px; border-radius: 11px;
   border: 1px solid color-mix(in srgb, var(--accent) 35%, transparent);
   background: var(--accent-soft); color: var(--accent);
-  font: 600 19px var(--font-display);
+  font: 600 19px var(--font-brand);
 }
-.brand-name { font: 700 15px var(--font-display); letter-spacing: .06em; }
+.brand-name { font: 700 15px var(--font-brand); letter-spacing: .06em; }
 .brand-name small { display: block; font: 400 11px var(--font-body); letter-spacing: 0; color: var(--muted); margin-top: 2px; }
 
 .rail-label { margin: 36px 12px 10px; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); }
@@ -138,13 +142,26 @@ a:hover { text-decoration-thickness: 2px; }
 .rail-note p { margin: 8px 0 0; color: var(--faint); }
 .phase-dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--mana); margin-right: 6px; box-shadow: 0 0 0 3px var(--mana-soft); }
 
+.rail-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 4px 8px 0; }
+
 .theme-toggle {
-  margin: 4px 8px 0; align-self: flex-start;
   display: inline-flex; align-items: center; gap: 8px;
   padding: 7px 11px; border-radius: 8px; border: 1px solid var(--border);
   background: transparent; color: var(--muted); font: 500 12px var(--font-body); cursor: pointer;
 }
 .theme-toggle:hover { color: var(--text); background: var(--accent-soft); }
+
+/* EN | UA: the current language is plain text, the other is a link to this page's translation. */
+.lang-switch { display: inline-flex; border: 1px solid var(--border); border-radius: 8px; }
+.lang-switch > * {
+  padding: 7px 10px; font: 500 12px var(--font-body); letter-spacing: .04em;
+  color: var(--muted); text-decoration: none;
+}
+.lang-switch > * + * { border-left: 1px solid var(--border); }
+.lang-switch > :first-child { border-radius: 7px 0 0 7px; }
+.lang-switch > :last-child { border-radius: 0 7px 7px 0; }
+.lang-switch > [aria-current] { background: var(--accent-soft); color: var(--text); }
+.lang-switch a:hover { color: var(--text); background: var(--accent-soft); }
 
 /* ---------- Main column ---------- */
 
@@ -197,7 +214,7 @@ h2, h3 { font-family: var(--font-display); font-weight: 600; letter-spacing: .00
   background: repeating-linear-gradient(115deg, transparent 0 22px, #ffffff06 22px 23px);
 }
 .hero-kicker { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; opacity: .85; }
-.hero-title { margin: 10px 0 0; font: 700 clamp(36px, 6vw, 84px)/1 var(--font-display); letter-spacing: .02em; }
+.hero-title { margin: 10px 0 0; font: 700 clamp(36px, 6vw, 84px)/1 var(--font-brand); letter-spacing: .02em; }
 .hero-title b { color: #e3c27a; font-weight: 700; }
 .hero-line { margin: 14px 0 0; max-width: 52ch; font-size: 14px; opacity: .9; }
 .hero figcaption { position: absolute; right: 16px; bottom: 12px; font-size: 10px; opacity: .7; }
@@ -402,7 +419,9 @@ figure.art figcaption { margin-top: 8px; font-size: 12px; color: var(--faint); }
   .brand-mark { width: 30px; height: 30px; font-size: 15px; border-radius: 8px; }
   .brand-name { font-size: 13px; }
   .brand-name small, .rail-label, .rail-note, .rail nav ul { display: none; }
-  .theme-toggle { margin: 0; padding: 5px 9px; font-size: 11px; }
+  .rail-tools { flex-wrap: nowrap; gap: 6px; margin: 0; }
+  .theme-toggle { padding: 5px 9px; font-size: 11px; }
+  .lang-switch > * { padding: 5px 8px; font-size: 11px; }
   .rail nav > ol { position: relative; display: flex; gap: 2px; overflow-x: auto; margin: 8px -16px 0; padding: 0 16px 4px; scrollbar-width: none; }
   .rail nav > ol::-webkit-scrollbar { display: none; }
   .rail nav a { white-space: nowrap; padding: 7px 10px; font-size: 12px; gap: 6px; }
@@ -423,7 +442,8 @@ figure.art figcaption { margin-top: 8px; font-size: 12px; color: var(--faint); }
 
 @media (min-width: 761px) {
   .rail-head { display: block; }
-  .rail-head .theme-toggle { margin-top: 18px; }
+  /* One control per line: side by side they would jump between one and two lines as the theme label changes. */
+  .rail-head .rail-tools { margin-top: 18px; flex-direction: column; align-items: flex-start; }
 }
 
 @media (prefers-reduced-motion: reduce) {
