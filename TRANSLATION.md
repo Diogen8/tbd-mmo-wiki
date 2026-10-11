@@ -1,16 +1,40 @@
 # Ukrainian translation
 
-Every English page has a Ukrainian translation at the same path under `uk/`. English is
-the source: when the two disagree, the English page is right, and the Ukrainian hub says
-so. A translation renders the same design notes, so the rules in the [README](README.md)
-apply unchanged: nothing added, nothing filled in, gaps stay “Ще не розроблено”.
+Every page is built in English and in Ukrainian (under `uk/`) from one template. English
+is the source: when the two disagree, English is right, and the Ukrainian hub says so. A
+translation renders the same design notes, so the rules in the [README](README.md) apply
+unchanged: nothing added, nothing filled in, gaps stay “Ще не розроблено”.
+
+## Where the text lives
+
+All text is in `locales/`, one [i18next](https://www.i18next.com/) JSON file per page and
+language, plus `common.json` for what every page shares:
+
+```
+locales/en/world.json    "cosmology": { "title": "Mana &amp; Cosmology", "p1": "A team brainstorm…" }
+locales/uk/world.json    "cosmology": { "title": "Мана й космологія", "p1": "Командний мозковий штурм…" }
+src/pages/world.njk      <h2 id="cosmology">{{ t("cosmology.title") }} …</h2>
+```
+
+Keys are grouped by the section they belong to (`cosmology`, `locations.questions`,
+`toc`, `meta` for the title and description) and numbered in page order. To translate,
+change the values in `locales/uk/`; never rename a key in one language only.
+
+- **Values are HTML.** Keep `&amp;` for “&”, and keep inline tags (`<strong>`, `<em>`,
+  `<code>`, `<a href="…">`) balanced. Inline tags may move inside a sentence; a link's
+  `href` stays exactly as in English.
+- **Same keys in both languages.** `npm run build` fails when a key is missing in one
+  language or no template uses it, and `check_site.mjs` fails when the two languages end
+  up with different anchors or links.
+- **Interface text** (theme button, image viewer) is under `ui` in `common.json`;
+  `wiki.js` reads it from the page.
 
 ## How to translate
 
 - **Translate the meaning, not the words.** Write the sentence a Ukrainian designer would
   write. Reorder, split or merge clauses when English word order reads awkwardly.
-- **Keep the structure.** Same sections, ids, lists, tables, links and open questions.
-  `check_site.mjs` fails if anchors or links differ between the two languages.
+- **Keep the structure.** The template is shared, so sections, lists and tables are the
+  same in both languages; a string never adds a paragraph or list of its own.
 - **Link text names the page**, so it isn't declined: “на сторінці <a>Економіка мани</a>”,
   “див. <a>Розвиток персонажа</a>”.
 - **Typography:** «ялинки» for quotes, the typographic apostrophe `’` (п’ять, зв’язок),

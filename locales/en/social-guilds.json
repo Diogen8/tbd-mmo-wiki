@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "title": "Social &amp; Guilds · TBD MMO design wiki",
+    "description": "Grouping, guilds and communication. Not designed yet."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / Social &amp; Guilds",
+    "eyebrow": "Systems / 04.8",
+    "h1": "Social &amp; Guilds",
+    "lede": "How players find each other, band together and talk. No social design is agreed yet."
+  },
+  "grouping": {
+    "title": "Grouping",
+    "tbd": "Party size, how players find each other, and shared rewards."
+  },
+  "guilds": {
+    "title": "Guilds",
+    "tbd": "What a guild is mechanically: roster, roles, shared goals, a home."
+  },
+  "communication": {
+    "title": "Communication",
+    "tbd": "Chat channels, nearby voice or text, and presence outside the game."
+  },
+  "related": {
+    "title": "Already decided elsewhere",
+    "li1": "Party, guild and city are the three ally tiers, all mutually protective: <a href=\"pvp.html#ally-tiers\">PvP, Robbery &amp; PK</a>.",
+    "li2": "Allies never block each other’s projectiles: <a href=\"combat.html#projectiles\">Combat</a>."
+  },
+  "pager": {
+    "prev": "Inventory &amp; Economy",
+    "next": "05 Status"
+  }
+}

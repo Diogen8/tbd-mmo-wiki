@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "title": "World Progression · TBD MMO design wiki",
+    "description": "How the world itself advances: finite resources, independent city economies, contracts, weekly renewal and player-driven technology."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / World Progression",
+    "eyebrow": "Systems / 04.6",
+    "h1": "World Progression &amp; Resource Economy",
+    "lede": "Depletion must make players search for a solution, not wait for reset day.",
+    "p": "A team brainstorm from September 2026. Not agreed for build yet. This page describes the intended world loop, not how anything behaves today."
+  },
+  "toc": {
+    "core-idea": "Core idea",
+    "two-layers": "Two layers of progression",
+    "floor": "Economic floor",
+    "cities": "Independent city economies",
+    "contracts": "City demand and contracts",
+    "finite": "Finite resources",
+    "renewal": "Weekly world renewal",
+    "discovery": "Discovery and technology",
+    "adoption": "Global discovery, local adoption",
+    "cycle": "An example cycle",
+    "safeguards": "Safeguards"
+  },
+  "core-idea": {
+    "title": "Core idea",
+    "p1": "Character levels alone don’t unlock every new equipment tier. Players also advance the technological state of the world by exploring, extracting finite resources, supplying cities and completing research projects.",
+    "pre": "resource extraction\n→ local depletion and scarcity\n→ higher city demand and contract rewards\n→ exploration, trade and conflict\n→ discovery of new deposits or materials\n→ city research and production\n→ new recipes, equipment and world events",
+    "p2": "This answers the bootstrap problem of a player-crafted economy. The world must provide basic equipment before specialized gatherers and crafters exist, while later equipment generations should emerge from player activity rather than appear automatically at level thresholds."
+  },
+  "two-layers": {
+    "title": "Two layers of progression",
+    "li1": "<strong>Character progression</strong> is personal: level, weapon mastery, crafting mastery and the passive tree. See <a href=\"progression.html\">Progression</a>.",
+    "li2": "<strong>World progression</strong> is persistent and shared: discovered resources, known technologies, developed cities and changed production chains.",
+    "p": "A new player joining an old world must still be able to start playing. World advancement expands the choices; it must not remove the basic economic floor."
+  },
+  "floor": {
+    "title": "Economic floor",
+    "p1": "These stay available even when players exhaust nearby regions:",
+    "li1": "simple starter equipment;",
+    "li2": "common renewable materials;",
+    "li3": "basic recipes;",
+    "li4": "a minimal source of essential tools and clothing;",
+    "li5": "at least one inefficient substitute or recovery path for critical inputs.",
+    "p2": "Finite strategic resources may slow advanced production. Their absence must not stop new characters from taking part."
+  },
+  "cities": {
+    "title": "Independent city economies",
+    "p1": "Every city has its own economy instead of sharing one global market. A city keeps track of at least its treasury, resource stockpiles, desired reserve levels, consumption rates, local prices, active supply contracts and known technologies.",
+    "p2": "The same resource can be cheap in a producing city and expensive in a city whose stockpile is nearly empty. That creates real trade routes and reasons to move goods; distance, danger and regional depletion give those routes their value. Markets, inventories and direct player trade belong to <a href=\"inventory-economy.html\">Inventory &amp; Economy</a>. This page covers the world-level supply and demand that drives them."
+  },
+  "contracts": {
+    "title": "City demand and contracts",
+    "p1": "Contracts come from actual city needs, not arbitrary repeatable quests.",
+    "pre": "stock falls below the desired reserve\n→ the city publishes a supply contract\n→ the reward rises as scarcity gets worse\n→ players deliver resources\n→ stock recovers\n→ the reward and local price gradually fall",
+    "p2": "Price and reward changes are bounded and smoothed. Selling one item must not instantly crash a market, and coordinated players must not be able to print money by oscillating a stockpile around one threshold. In the mature system, city projects and public services consume real reserves; early on, cities may need protected starting budgets until taxation, governance and player production can sustain the loop."
+  },
+  "finite": {
+    "title": "Finite resources",
+    "p1": "Strategic deposits have a finite capacity. Extraction reduces it for everyone; a deposit is not one character’s private node. Animal populations follow the same principle:",
+    "li1": "hunting reduces a regional population;",
+    "li2": "low populations mean fewer encounters and fewer materials;",
+    "li3": "surviving populations reproduce or migrate while they recover;",
+    "li4": "overhunted areas can stay poor for longer than responsibly used ones.",
+    "p2": "Permanent extinction or an irreversible deadlock is not the goal. The system creates temporary scarcity and a changing geography, not a way for early players to delete content forever."
+  },
+  "renewal": {
+    "title": "Weekly world renewal",
+    "p1": "About once a week the world goes through a larger ecological and geological renewal. It is not a reset that restores every known node in the same place. During renewal:",
+    "li1": "some depleted deposits partially recover, and some disappear;",
+    "li2": "new deposits appear in undiscovered places;",
+    "li3": "animal populations recover, decline or migrate;",
+    "li4": "heavily exploited regions recover more slowly;",
+    "li5": "rumours, tracks, surveys or contracts can hint at new finds without giving exact coordinates.",
+    "p2": "Depletion must make players search for a solution, not wait for reset day.",
+    "p3": "Other answers include exploring, importing from another city, salvaging equipment, using a weaker substitute, opening a dangerous route, or contesting another group’s supply line."
+  },
+  "discovery": {
+    "title": "Discovery and technological change",
+    "p1": "Rare discoveries can advance the technology available to the world. The working example is an <strong>Arkenstone</strong>: not merely high-value loot, and it doesn’t instantly unlock an equipment grade when one player picks it up. A discovery follows a chain:",
+    "pre": "find an anomaly or unknown sample\n→ deliver the evidence to a city\n→ start a public research project\n→ supply the researchers with materials and mana\n→ complete a world event\n→ unlock a technology and its production chain",
+    "p2": "An unlock may bring processing of a new material, use of a purer class of mana core, new weapons, armour or enchantments, protection from a new damage type, infrastructure that opens a dangerous region, and new resource demand and contracts. It ties into the shared mana layer in <a href=\"mana.html\">Mana Economy</a> rather than a separate progression currency."
+  },
+  "adoption": {
+    "title": "Global discovery, local adoption",
+    "p1": "A discovery is global: the world records who found it, and everyone sees its consequences. Adopting the technology is local to each city. The city that completes the first research project gets first access to the new recipes and supply chain. Other cities can later:",
+    "li1": "reproduce the research;",
+    "li2": "trade for the knowledge, or get it through diplomacy;",
+    "li3": "steal it;",
+    "li4": "capture infrastructure that already uses it.",
+    "p2": "Knowledge must eventually spread. One group can earn a meaningful lead, but must not lock the rest of the world out of a whole equipment generation forever. Local adoption connects economic specialization to city politics, trade and the city wars in <a href=\"pvp.html#city-wars\">PvP, Robbery &amp; PK</a>."
+  },
+  "cycle": {
+    "title": "An example world cycle",
+    "li1": "City A uses up most of its nearby iron.",
+    "li2": "Its reserve falls, and iron contracts become more and more valuable.",
+    "li3": "Prospectors find a distant deposit near a dangerous route.",
+    "li4": "Traders and guards set up a supply line; rivals start contesting it.",
+    "li5": "Another expedition discovers an unknown mana-reactive mineral.",
+    "li6": "City A funds research with ore, mana cores and crafted instruments.",
+    "li7": "The research event unlocks a new alloy and its equipment recipes in City A.",
+    "li8": "Other cities respond through trade, their own research, or conflict.",
+    "li9": "The weekly renewal changes deposits and populations, starting the next search."
+  },
+  "safeguards": {
+    "title": "Safeguards",
+    "li1": "No single unique random drop may permanently gate the whole world.",
+    "li2": "Common necessities stay obtainable when strategic resources run out.",
+    "li3": "Prices and contract rewards have minimums, maximums and gradual changes.",
+    "li4": "Resource locations change enough to keep exploration alive.",
+    "li5": "Discovery credit and rewards survive after the knowledge spreads.",
+    "li6": "Low-population cities get a slower but viable recovery path.",
+    "li7": "Hoarding can create leverage, but not an irreversible lock on the world.",
+    "li8": "The state of the world is persistent and kept by the server.",
+    "questions": {
+      "summary": "Open questions · World Progression",
+      "li1": "The exact length and timing of the renewal cycle.",
+      "li2": "How players prospect for hidden deposits and track migrating populations.",
+      "li3": "Which resources are renewable, recoverable, migratory, or strictly finite within one cycle.",
+      "li4": "How city treasuries get money before taxation and governance exist.",
+      "li5": "Who controls city contract priorities and research projects.",
+      "li6": "How quickly technology spreads to cities that didn’t discover it.",
+      "li7": "Whether recipes are known city-wide, learned by individual crafters, or both.",
+      "li8": "How offline population changes are simulated without outcomes feeling arbitrary.",
+      "li9": "Which parts of a discovery are announced to everyone and which stay secret."
+    }
+  },
+  "pager": {
+    "prev": "PvP, Robbery &amp; PK",
+    "next": "Inventory &amp; Economy"
+  }
+}

@@ -1,0 +1,72 @@
+---
+current: systems
+currentSystem: combat
+---
+<div class="topline"><span>{{ t("intro.crumbs") }}</span><span class="tag draft">{{ t("common:tag.draft") }}</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">{{ t("intro.eyebrow") }}</div>
+    <h1>{{ t("intro.h1") }}</h1>
+  </div>
+  <p class="lede">{{ t("intro.lede") }}</p>
+</div>
+
+<nav class="toc" aria-label="{{ t("common:toc.title") }}">
+  <b>{{ t("common:toc.title") }}</b>
+  <ol>
+    <li><a href="#fantasy">{{ t("toc.fantasy") }}</a></li>
+    <li><a href="#model">{{ t("toc.model") }}</a></li>
+    <li><a href="#projectiles">{{ t("toc.projectiles") }}</a></li>
+    <li><a href="#controls">{{ t("toc.controls") }}</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>{{ t("intro.p") }}</p>
+
+  <h2 id="fantasy">{{ t("fantasy.title") }}</h2>
+  <div class="tbd"><p><strong>{{ t("common:tbd") }}</strong> {{ t("fantasy.tbd") }}</p></div>
+
+  <h2 id="model">{{ t("model.title") }}</h2>
+  <p>{{ t("model.p1") }}</p>
+
+  <h3>{{ t("model.h3") }}</h3>
+  <p>{{ t("model.p2") }}</p>
+  <ul>
+    <li>{{ t("model.li1") }}</li>
+    <li>{{ t("model.li2") }}</li>
+  </ul>
+  <p>{{ t("model.p3") }}</p>
+  <div class="callout"><p>{{ t("model.p4") }}</p></div>
+
+  <h2 id="projectiles">{{ t("projectiles.title") }}</h2>
+  <ul>
+    <li>{{ t("projectiles.li1") }}</li>
+    <li>{{ t("projectiles.li2") }}</li>
+    <li>{{ t("projectiles.li3") }}</li>
+  </ul>
+
+  <h2 id="controls">{{ t("controls.title") }}</h2>
+  <ul>
+    <li>{{ t("controls.li1") }}</li>
+    <li>{{ t("controls.li2") }}</li>
+    <li>{{ t("controls.li3") }}</li>
+    <li>{{ t("controls.li4") }}</li>
+    <li>{{ t("controls.li5") }}</li>
+  </ul>
+</article>
+
+<details class="questions">
+  <summary>{{ t("controls.questions.summary") }}</summary>
+  <ul>
+    <li>{{ t("controls.questions.li1") }}</li>
+    <li>{{ t("controls.questions.li2") }}</li>
+    <li>{{ t("controls.questions.li3") }}</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="{{ t("common:pager.label") }}">
+  <a class="prev" href="stats.html"><small>{{ t("common:pager.prev") }}</small>{{ t("pager.prev") }}</a>
+  <a class="next" href="progression.html"><small>{{ t("common:pager.next") }}</small>{{ t("pager.next") }}</a>
+</nav>

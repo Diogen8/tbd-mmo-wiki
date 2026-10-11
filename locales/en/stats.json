@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "title": "Character Stats · TBD MMO design wiki",
+    "description": "The six primary attributes, the derived combat stats they feed, resources, and how modifiers are applied."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / Character Stats",
+    "eyebrow": "Systems / 04.2",
+    "h1": "Character Stats",
+    "lede": "The agreed stat vocabulary. Exact values, scaling formulas, damage formulas and balance caps are still open.",
+    "p": "Players, NPCs and monsters share the same stat model. What separates them is their definition and the capabilities they have, not a different set of stats."
+  },
+  "toc": {
+    "primary": "Primary attributes",
+    "derived": "Derived stats",
+    "order": "How modifiers apply",
+    "invariants": "Invariants"
+  },
+  "primary": {
+    "title": "Primary attributes",
+    "table": {
+      "head": {
+        "c1": "Attribute",
+        "c2": "Feeds"
+      },
+      "r1": {
+        "c1": "<strong>STR</strong> Strength",
+        "c2": "Physical attack, physical critical multiplier"
+      },
+      "r2": {
+        "c1": "<strong>DEX</strong> Dexterity",
+        "c2": "Accuracy, evasion, attack speed, physical critical chance"
+      },
+      "r3": {
+        "c1": "<strong>CON</strong> Constitution",
+        "c2": "Max health, health regeneration, part of physical defense"
+      },
+      "r4": {
+        "c1": "<strong>INT</strong> Intelligence",
+        "c2": "Magical attack, magical critical multiplier"
+      },
+      "r5": {
+        "c1": "<strong>WIS</strong> Wisdom",
+        "c2": "Max mana, mana regeneration, magical defense, cast speed, magical critical chance"
+      },
+      "r6": {
+        "c1": "<strong>CHA</strong> Charisma",
+        "c2": "Future social stats and interactions"
+      }
+    },
+    "p1": "Primary attributes are inputs to the derived stats. They are not current resources, and they don’t directly represent an attack result.",
+    "p2": "<strong>Rule:</strong> movement speed should not scale strongly or directly from DEX. Otherwise DEX would improve accuracy, evasion, attack frequency, critical chance and mobility all at once, and become a mandatory attribute."
+  },
+  "derived": {
+    "title": "Derived stats",
+    "h3_1": "Resources",
+    "li1": "Max health",
+    "li2": "Max mana",
+    "li3": "Health regeneration",
+    "li4": "Mana regeneration",
+    "h3_2": "Offense",
+    "li5": "Physical attack",
+    "li6": "Magical attack",
+    "li7": "Accuracy",
+    "li8": "Physical critical chance",
+    "li9": "Physical critical multiplier",
+    "li10": "Magical critical chance",
+    "li11": "Magical critical multiplier",
+    "li12": "Attack speed",
+    "li13": "Cast speed",
+    "li14": "Cooldown reduction",
+    "p1": "Physical and magical attack are inputs to damage calculation, not final damage values. <strong>Attack speed</strong> shortens the basic-attack cycle, <strong>cast speed</strong> shortens ability preparation and casting time, and <strong>cooldown reduction</strong> shortens the reuse delay after an action completes. These are three separate mechanics.",
+    "h3_3": "Defense",
+    "li15": "Physical defense",
+    "li16": "Magical defense",
+    "li17": "Evasion",
+    "li18": "Elemental resistance, per damage type",
+    "p2": "Elemental resistance is keyed by damage type rather than a fixed field for every possible element. The supported damage types are not decided yet. Resistance may be negative.",
+    "h3_4": "Movement",
+    "li19": "Movement speed",
+    "p3": "Acceleration and deceleration belong to movement itself and are not part of the general stat set.",
+    "p4": "Current health and current mana are the character’s live resources, not derived stats."
+  },
+  "order": {
+    "title": "How modifiers apply",
+    "p1": "Values are resolved in a fixed order:",
+    "pre1": "base values of the character’s definition\n+ permanent character modifiers\n+ equipment modifiers\n+ temporary effects\n→ resolved attributes and stats",
+    "p2": "Each stat follows the same pipeline:",
+    "pre2": "(base + flat modifiers)\n× (1 + sum of additive percentages)\n× final multipliers\n→ clamp for that stat",
+    "p3": "Every modifier carries a stable source, so everything an item, effect or progression node contributes can be replaced or removed together."
+  },
+  "invariants": {
+    "title": "Invariants",
+    "table": {
+      "head": {
+        "c1": "Stat",
+        "c2": "Rule"
+      },
+      "r1": {
+        "c1": "Critical chance",
+        "c2": "0–100%"
+      },
+      "r2": {
+        "c1": "Critical multiplier",
+        "c2": "at least 1.0"
+      },
+      "r3": {
+        "c1": "Attack speed, cast speed",
+        "c2": "above 0"
+      },
+      "r4": {
+        "c1": "Max health, max mana",
+        "c2": "above 0"
+      },
+      "r5": {
+        "c1": "Health and mana regeneration",
+        "c2": "may be negative"
+      },
+      "r6": {
+        "c1": "Elemental resistance",
+        "c2": "may be negative"
+      },
+      "r7": {
+        "c1": "Cooldown reduction",
+        "c2": "needs a hard maximum"
+      }
+    },
+    "questions": {
+      "summary": "Open questions · Character Stats",
+      "li1": "Exact formulas from primary attributes to derived stats.",
+      "li2": "The relative weight of attributes, equipment, weapon mastery and temporary effects.",
+      "li3": "The hard cap for cooldown reduction.",
+      "li4": "The accuracy-versus-evasion hit-chance formula, and its minimum and maximum result.",
+      "li5": "Which physical, magical and elemental damage types exist.",
+      "li6": "Whether critical chance or the critical multiplier gets additional soft caps.",
+      "li7": "Which social stats derive from CHA, and whether any of them affect combat."
+    }
+  },
+  "pager": {
+    "prev": "Mana Economy",
+    "next": "Combat"
+  }
+}

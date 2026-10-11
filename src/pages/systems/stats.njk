@@ -1,0 +1,101 @@
+---
+current: systems
+currentSystem: stats
+---
+<div class="topline"><span>{{ t("intro.crumbs") }}</span><span class="tag draft">{{ t("common:tag.draft") }}</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">{{ t("intro.eyebrow") }}</div>
+    <h1>{{ t("intro.h1") }}</h1>
+  </div>
+  <p class="lede">{{ t("intro.lede") }}</p>
+</div>
+
+<nav class="toc" aria-label="{{ t("common:toc.title") }}">
+  <b>{{ t("common:toc.title") }}</b>
+  <ol>
+    <li><a href="#primary">{{ t("toc.primary") }}</a></li>
+    <li><a href="#derived">{{ t("toc.derived") }}</a></li>
+    <li><a href="#order">{{ t("toc.order") }}</a></li>
+    <li><a href="#invariants">{{ t("toc.invariants") }}</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>{{ t("intro.p") }}</p>
+
+  <h2 id="primary">{{ t("primary.title") }}</h2>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">{{ t("primary.table.head.c1") }}</th><th scope="col">{{ t("primary.table.head.c2") }}</th></tr></thead>
+    <tbody>
+      <tr><td>{{ t("primary.table.r1.c1") }}</td><td>{{ t("primary.table.r1.c2") }}</td></tr>
+      <tr><td>{{ t("primary.table.r2.c1") }}</td><td>{{ t("primary.table.r2.c2") }}</td></tr>
+      <tr><td>{{ t("primary.table.r3.c1") }}</td><td>{{ t("primary.table.r3.c2") }}</td></tr>
+      <tr><td>{{ t("primary.table.r4.c1") }}</td><td>{{ t("primary.table.r4.c2") }}</td></tr>
+      <tr><td>{{ t("primary.table.r5.c1") }}</td><td>{{ t("primary.table.r5.c2") }}</td></tr>
+      <tr><td>{{ t("primary.table.r6.c1") }}</td><td>{{ t("primary.table.r6.c2") }}</td></tr>
+    </tbody>
+  </table>
+</div>
+<article class="prose">
+  <p>{{ t("primary.p1") }}</p>
+  <div class="callout rule"><p>{{ t("primary.p2") }}</p></div>
+
+  <h2 id="derived">{{ t("derived.title") }}</h2>
+  <h3>{{ t("derived.h3_1") }}</h3>
+  <ul class="chips"><li>{{ t("derived.li1") }}</li><li>{{ t("derived.li2") }}</li><li>{{ t("derived.li3") }}</li><li>{{ t("derived.li4") }}</li></ul>
+  <h3>{{ t("derived.h3_2") }}</h3>
+  <ul class="chips"><li>{{ t("derived.li5") }}</li><li>{{ t("derived.li6") }}</li><li>{{ t("derived.li7") }}</li><li>{{ t("derived.li8") }}</li><li>{{ t("derived.li9") }}</li><li>{{ t("derived.li10") }}</li><li>{{ t("derived.li11") }}</li><li>{{ t("derived.li12") }}</li><li>{{ t("derived.li13") }}</li><li>{{ t("derived.li14") }}</li></ul>
+  <p>{{ t("derived.p1") }}</p>
+  <h3>{{ t("derived.h3_3") }}</h3>
+  <ul class="chips"><li>{{ t("derived.li15") }}</li><li>{{ t("derived.li16") }}</li><li>{{ t("derived.li17") }}</li><li>{{ t("derived.li18") }}</li></ul>
+  <p>{{ t("derived.p2") }}</p>
+  <h3>{{ t("derived.h3_4") }}</h3>
+  <ul class="chips"><li>{{ t("derived.li19") }}</li></ul>
+  <p>{{ t("derived.p3") }}</p>
+  <p>{{ t("derived.p4") }}</p>
+
+  <h2 id="order">{{ t("order.title") }}</h2>
+  <p>{{ t("order.p1") }}</p>
+  <pre class="flow">{{ t("order.pre1") }}</pre>
+  <p>{{ t("order.p2") }}</p>
+  <pre class="flow">{{ t("order.pre2") }}</pre>
+  <p>{{ t("order.p3") }}</p>
+
+  <h2 id="invariants">{{ t("invariants.title") }}</h2>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">{{ t("invariants.table.head.c1") }}</th><th scope="col">{{ t("invariants.table.head.c2") }}</th></tr></thead>
+    <tbody>
+      <tr><td>{{ t("invariants.table.r1.c1") }}</td><td>{{ t("invariants.table.r1.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r2.c1") }}</td><td>{{ t("invariants.table.r2.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r3.c1") }}</td><td>{{ t("invariants.table.r3.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r4.c1") }}</td><td>{{ t("invariants.table.r4.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r5.c1") }}</td><td>{{ t("invariants.table.r5.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r6.c1") }}</td><td>{{ t("invariants.table.r6.c2") }}</td></tr>
+      <tr><td>{{ t("invariants.table.r7.c1") }}</td><td>{{ t("invariants.table.r7.c2") }}</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<details class="questions">
+  <summary>{{ t("invariants.questions.summary") }}</summary>
+  <ul>
+    <li>{{ t("invariants.questions.li1") }}</li>
+    <li>{{ t("invariants.questions.li2") }}</li>
+    <li>{{ t("invariants.questions.li3") }}</li>
+    <li>{{ t("invariants.questions.li4") }}</li>
+    <li>{{ t("invariants.questions.li5") }}</li>
+    <li>{{ t("invariants.questions.li6") }}</li>
+    <li>{{ t("invariants.questions.li7") }}</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="{{ t("common:pager.label") }}">
+  <a class="prev" href="mana.html"><small>{{ t("common:pager.prev") }}</small>{{ t("pager.prev") }}</a>
+  <a class="next" href="combat.html"><small>{{ t("common:pager.next") }}</small>{{ t("pager.next") }}</a>
+</nav>

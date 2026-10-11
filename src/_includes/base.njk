@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ t("meta.title") }}</title>
+<meta name="description" content="{{ t("meta.description") }}">
+{% if not noTranslation %}{% for code in site.locales %}<link rel="alternate" hreflang="{{ code }}" href="{{ site.url }}{{ site.languages[code].prefix }}{{ path }}">
+{% endfor %}{% endif %}<link rel="icon" href="{{ asset("assets/favicon.svg") }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?{{ site.fonts[lang] }}">
+<link rel="stylesheet" href="{{ asset("assets/wiki.css") }}">
+<script>try{var t=localStorage.getItem('wiki-theme');if(t==='dark'||t==='light')document.documentElement.dataset.theme=t}catch(e){}</script>
+<script type="application/json" id="wiki-strings">{{ uiStrings() }}</script>
+<script defer src="{{ asset("assets/wiki.js") }}"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">{{ t("common:site.skip") }}</a>
+<div class="shell">
+<aside class="rail">
+  <div class="rail-head">
+    <a class="brand" href="{{ url("index.html") }}"><span class="brand-mark" aria-hidden="true">◈</span><span class="brand-name">TBD MMO<small>{{ t("common:site.subtitle") }}</small></span></a>
+    <div class="rail-tools">
+      <button type="button" class="theme-toggle">{{ t("common:ui.theme.system") }}</button>
+      <div class="lang-switch" role="group" aria-label="{{ t("common:site.language") }}">
+        {%- for code in site.locales %}
+        {%- set language = site.languages[code] %}
+        {%- if code == lang %}<span aria-current="true" title="{{ language.name }}">{{ language.label }}</span>
+        {%- else %}<a href="{{ translationUrl(code) }}" hreflang="{{ code }}" lang="{{ code }}" title="{{ language.name }}">{{ language.label }}</a>
+        {%- endif %}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+  <div class="rail-label">{{ t("common:site.railLabel") }}</div>
+  <nav aria-label="{{ t("common:site.sections") }}">
+    <ol>
+{%- for item in rail %}
+      <li><a href="{{ url(item.href) }}"{% if item.id == current %} aria-current="{{ "true" if currentSystem else "page" }}"{% endif %}><span>{{ item.num }}</span>{{ t("common:nav." + item.id) }}</a>
+{%- if item.children %}
+        <ul>
+{%- for child in item.children %}
+          <li><a href="{{ url(child.href) }}"{% if child.id == currentSystem %} aria-current="page"{% endif %}>{{ t("common:nav." + child.id) }}</a></li>
+{%- endfor %}
+        </ul>
+      </li>
+{%- else %}</li>{% endif %}
+{%- endfor %}
+    </ol>
+  </nav>
+  <div class="rail-note"><span class="phase-dot"></span>{{ t("common:site.phase") }}<p>{{ t("common:site.phaseNote") }}</p></div>
+</aside>
+<main id="main">
+{{ content }}<footer class="site-footer">
+  <span>{{ t("common:footer.note") }}</span>
+  <span><a href="{{ url("index.html#status") }}">{{ t("common:footer.status") }}</a></span>
+</footer>
+</main>
+</div>
+</body>
+</html>

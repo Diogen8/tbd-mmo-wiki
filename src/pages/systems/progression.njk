@@ -1,0 +1,110 @@
+---
+current: systems
+currentSystem: progression
+---
+<div class="topline"><span>{{ t("intro.crumbs") }}</span><span class="tag draft">{{ t("common:tag.draft") }}</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">{{ t("intro.eyebrow") }}</div>
+    <h1>{{ t("intro.h1") }}</h1>
+  </div>
+  <p class="lede">{{ t("intro.lede") }}</p>
+</div>
+
+<nav class="toc" aria-label="{{ t("common:toc.title") }}">
+  <b>{{ t("common:toc.title") }}</b>
+  <ol>
+    <li><a href="#core-idea">{{ t("toc.core-idea") }}</a></li>
+    <li><a href="#passive-tree">{{ t("toc.passive-tree") }}</a></li>
+    <li><a href="#reset">{{ t("toc.reset") }}</a></li>
+    <li><a href="#never-gate">{{ t("toc.never-gate") }}</a></li>
+    <li><a href="#stones">{{ t("toc.stones") }}</a></li>
+    <li><a href="#anti-grind">{{ t("toc.anti-grind") }}</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <p>{{ t("intro.p") }}</p>
+
+  <h2 id="core-idea">{{ t("core-idea.title") }}</h2>
+  <ol>
+    <li>{{ t("core-idea.li1") }}</li>
+    <li>{{ t("core-idea.li2") }}</li>
+    <li>{{ t("core-idea.li3") }}</li>
+  </ol>
+  <p>{{ t("core-idea.p") }}</p>
+
+  <h2 id="passive-tree">{{ t("passive-tree.title") }}</h2>
+  <ul>
+    <li>{{ t("passive-tree.li1") }}</li>
+    <li>{{ t("passive-tree.li2") }}</li>
+    <li>{{ t("passive-tree.li3") }}
+      <ul><li>{{ t("passive-tree.li4") }}</li></ul>
+    </li>
+    <li>{{ t("passive-tree.li5") }}</li>
+  </ul>
+
+  <h2 id="reset">{{ t("reset.title") }}</h2>
+  <ul>
+    <li>{{ t("reset.li1") }}</li>
+    <li>{{ t("reset.li2") }}</li>
+    <li>{{ t("reset.li3") }}</li>
+    <li>{{ t("reset.li4") }}</li>
+  </ul>
+
+  <h2 id="never-gate">{{ t("never-gate.title") }}</h2>
+  <p>{{ t("never-gate.p1") }}</p>
+  <blockquote><p>{{ t("never-gate.p2") }}</p></blockquote>
+
+  <h2 id="stones">{{ t("stones.title") }}</h2>
+  <p>{{ t("stones.p1") }}</p>
+  <div class="grid-2">
+    <div class="card">
+      <div class="eyebrow">{{ t("stones.eyebrow1") }}</div>
+      <h3>{{ t("stones.h3_1") }}</h3>
+      <p>{{ t("stones.p2") }}</p>
+    </div>
+    <div class="card">
+      <div class="eyebrow">{{ t("stones.eyebrow2") }}</div>
+      <h3>{{ t("stones.h3_2") }}</h3>
+      <p>{{ t("stones.p3") }}</p>
+    </div>
+  </div>
+  <ul>
+    <li>{{ t("stones.li1") }}</li>
+    <li>{{ t("stones.li2") }}</li>
+  </ul>
+
+  <h3>{{ t("stones.h3_3") }}</h3>
+  <ul>
+    <li>{{ t("stones.li3") }}</li>
+    <li>{{ t("stones.li4") }}</li>
+    <li>{{ t("stones.li5") }}</li>
+  </ul>
+
+  <h2 id="anti-grind">{{ t("anti-grind.title") }}</h2>
+  <p>{{ t("anti-grind.p") }}</p>
+
+  <h2 id="pace">{{ t("pace.title") }}</h2>
+  <div class="tbd"><p><strong>{{ t("common:tbd") }}</strong></p></div>
+</article>
+
+<details class="questions">
+  <summary>{{ t("pace.questions.summary") }}</summary>
+  <ul>
+    <li>{{ t("pace.questions.li1") }}</li>
+    <li>{{ t("pace.questions.li2") }}</li>
+    <li>{{ t("pace.questions.li3") }}</li>
+    <li>{{ t("pace.questions.li4") }}</li>
+    <li>{{ t("pace.questions.li5") }}</li>
+    <li class="resolved">{{ t("pace.questions.li6") }}</li>
+    <li>{{ t("pace.questions.li7") }}</li>
+    <li>{{ t("pace.questions.li8") }}</li>
+  </ul>
+</details>
+
+<nav class="pager" aria-label="{{ t("common:pager.label") }}">
+  <a class="prev" href="combat.html"><small>{{ t("common:pager.prev") }}</small>{{ t("pager.prev") }}</a>
+  <a class="next" href="pvp.html"><small>{{ t("common:pager.next") }}</small>{{ t("pager.next") }}</a>
+</nav>

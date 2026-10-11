@@ -1,0 +1,128 @@
+---
+current: world
+---
+<div class="topline"><span>{{ t("intro.crumbs") }}</span><span class="pill">{{ t("intro.pill") }}</span></div>
+
+<div class="page-heading">
+  <div>
+    <div class="eyebrow">{{ t("intro.eyebrow") }}</div>
+    <h1>{{ t("intro.h1") }}</h1>
+  </div>
+  <p class="lede">{{ t("intro.lede") }}</p>
+</div>
+
+<nav class="toc" aria-label="{{ t("common:toc.title") }}">
+  <b>{{ t("common:toc.title") }}</b>
+  <ol>
+    <li><a href="#cosmology">{{ t("toc.cosmology") }}</a></li>
+    <li><a href="#locations">{{ t("toc.locations") }}</a></li>
+    <li><a href="#factions">{{ t("toc.factions") }}</a></li>
+    <li><a href="#timeline">{{ t("toc.timeline") }}</a></li>
+  </ol>
+</nav>
+
+<article class="prose">
+  <h2 id="cosmology">{{ t("cosmology.title") }} <span class="tag draft">{{ t("common:tag.draft") }}</span></h2>
+  <p>{{ t("cosmology.p1") }}</p>
+
+  <h3>{{ t("cosmology.h3_1") }}</h3>
+  <p>{{ t("cosmology.p2") }}</p>
+
+  <h3>{{ t("cosmology.h3_2") }}</h3>
+  <p>{{ t("cosmology.p3") }}</p>
+
+  <h3>{{ t("cosmology.h3_3") }}</h3>
+  <p>{{ t("cosmology.p4") }}</p>
+
+  <h3>{{ t("cosmology.h3_4") }}</h3>
+  <p>{{ t("cosmology.p5") }}</p>
+  <ul>
+    <li>{{ t("cosmology.li1") }}</li>
+    <li>{{ t("cosmology.li2") }}</li>
+  </ul>
+
+  <h3>{{ t("cosmology.h3_5") }}</h3>
+  <p>{{ t("cosmology.p6") }}</p>
+</article>
+
+<details class="questions">
+  <summary>{{ t("cosmology.questions.summary") }}</summary>
+  <ul>
+    <li>{{ t("cosmology.questions.li1") }}</li>
+    <li>{{ t("cosmology.questions.li2") }}</li>
+    <li>{{ t("cosmology.questions.li3") }}</li>
+    <li>{{ t("cosmology.questions.li4") }}</li>
+  </ul>
+</details>
+
+<article class="prose">
+  <h2 id="locations">{{ t("locations.title") }} <span class="tag draft">{{ t("common:tag.draft") }}</span></h2>
+  <p>{{ t("locations.p1") }}</p>
+</article>
+
+<figure class="art">
+  <div class="slot"><strong>{{ t("locations.strong") }}</strong><span>{{ t("locations.span") }}</span><small>{{ t("locations.small") }}</small></div>
+</figure>
+
+<article class="prose">
+  <h3>{{ t("locations.h3_1") }}</h3>
+  <p>{{ t("locations.p2") }}</p>
+  <p>{{ t("locations.p3") }}</p>
+  <ul>
+    <li>{{ t("locations.li1") }}</li>
+    <li>{{ t("locations.li2") }}</li>
+    <li>{{ t("locations.li3") }}</li>
+    <li>{{ t("locations.li4") }}</li>
+  </ul>
+
+  <h3>{{ t("locations.h3_2") }}</h3>
+</article>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th scope="col">{{ t("locations.table.head.c1") }}</th><th scope="col" class="num">{{ t("locations.table.head.c2") }}</th><th scope="col" class="num">{{ t("locations.table.head.c3") }}</th><th scope="col">{{ t("locations.table.head.c4") }}</th></tr></thead>
+    <tbody>
+      <tr><td><code>Lake_Central</code></td><td class="num">{{ t("locations.table.r1.c2") }}</td><td class="num">{{ t("locations.table.r1.c3") }}</td><td>{{ t("locations.table.r1.c4") }}</td></tr>
+      <tr><td><code>Lake_East</code></td><td class="num">{{ t("locations.table.r2.c2") }}</td><td class="num">{{ t("locations.table.r2.c3") }}</td><td>{{ t("locations.table.r2.c4") }}</td></tr>
+      <tr><td><code>Lake_West</code></td><td class="num">{{ t("locations.table.r3.c2") }}</td><td class="num">{{ t("locations.table.r3.c3") }}</td><td>{{ t("locations.table.r3.c4") }}</td></tr>
+      <tr><td><code>Lake_North_Small</code></td><td class="num">{{ t("locations.table.r4.c2") }}</td><td class="num">{{ t("locations.table.r4.c3") }}</td><td>{{ t("locations.table.r4.c4") }}</td></tr>
+      <tr><td><code>Lake_NE_Small</code></td><td class="num">{{ t("locations.table.r5.c2") }}</td><td class="num">{{ t("locations.table.r5.c3") }}</td><td>{{ t("locations.table.r5.c4") }}</td></tr>
+    </tbody>
+  </table>
+</div>
+<article class="prose">
+  <h3>{{ t("locations.h3_3") }}</h3>
+  <p>{{ t("locations.p4") }}</p>
+  <ul class="chips" aria-label="{{ t("locations.chips-label") }}">
+    <li>River_North_Main</li><li>River_NorthLake_Outflow</li><li>River_CentralLake_Inflow</li><li>River_CentralLake_Outflow</li>
+    <li>River_EastLake_Inflow</li><li>River_EastLake_Outflow</li><li>River_NELake_Outflow</li><li>River_West_Trunk</li>
+    <li>River_West_Trunk2</li><li>River_West_NorthArm</li><li>River_West_SouthArm</li><li>River_West_WestArm_ToLake</li>
+    <li>River_West_WestArm_FromLake</li>
+  </ul>
+  <ul>
+    <li>{{ t("locations.li5") }}</li>
+    <li>{{ t("locations.li6") }}</li>
+    <li>{{ t("locations.li7") }}</li>
+  </ul>
+</article>
+
+<details class="questions">
+  <summary>{{ t("locations.questions.summary") }}</summary>
+  <ul>
+    <li>{{ t("locations.questions.li1") }}</li>
+    <li>{{ t("locations.questions.li2") }}</li>
+    <li>{{ t("locations.questions.li3") }}</li>
+  </ul>
+</details>
+
+<article class="prose">
+  <h2 id="factions">{{ t("factions.title") }} <span class="tag stub">{{ t("common:tag.notDesigned") }}</span></h2>
+  <div class="tbd"><p><strong>{{ t("common:tbd") }}</strong> {{ t("factions.tbd") }}</p></div>
+
+  <h2 id="timeline">{{ t("timeline.title") }} <span class="tag stub">{{ t("common:tag.notDesigned") }}</span></h2>
+  <div class="tbd"><p><strong>{{ t("common:tbd") }}</strong> {{ t("timeline.tbd") }}</p></div>
+</article>
+
+<nav class="pager" aria-label="{{ t("common:pager.label") }}">
+  <a class="prev" href="index.html#concept"><small>{{ t("common:pager.prev") }}</small>{{ t("pager.prev") }}</a>
+  <a class="next" href="races.html"><small>{{ t("common:pager.next") }}</small>{{ t("pager.next") }}</a>
+</nav>

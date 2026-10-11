@@ -1,0 +1,15 @@
+{
+  "meta": {
+    "title": "Page not found · TBD MMO design wiki",
+    "description": "This page does not exist."
+  },
+  "intro": {
+    "crumbs": "Design wiki / 404",
+    "pill": "Not found",
+    "eyebrow": "Lost in the white desert",
+    "h1": "This page doesn’t exist.",
+    "lede": "It may have been renamed, or never written.",
+    "btn1": "Back to the hub",
+    "btn2": "All systems"
+  }
+}

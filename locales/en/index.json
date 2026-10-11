@@ -1,0 +1,95 @@
+{
+  "meta": {
+    "title": "TBD MMO · Design wiki",
+    "description": "Public design wiki of a dark-fantasy MMO in early development: concept, world, races and game systems."
+  },
+  "intro": {
+    "crumbs": "Design wiki / Hub",
+    "pill": "Early development · drafts",
+    "eyebrow": "Dark fantasy MMO · working title",
+    "h1": "Civilization is upkeep.",
+    "lede": "A sword-and-magic world where mana holds reality together, and every thriving city exists only because someone keeps paying for it.",
+    "hero-kicker": "A world made of mana",
+    "hero-line": "Left untended, the land slides back into white desert.",
+    "figcaption": "Key art: not added yet",
+    "btn1": "Enter the world",
+    "btn2": "Read the systems"
+  },
+  "stats": {
+    "area": "800 km²",
+    "areaNote": "island continent, the first world map",
+    "racesNote": "playable races, lore not written yet",
+    "systemsNote": "game systems in design: 6 drafts, 2 stubs"
+  },
+  "concept": {
+    "title": "Concept",
+    "subtitle": "The top-level vision",
+    "eyebrow1": "Tone &amp; setting",
+    "h3_1": "A fragile, contested civilization",
+    "p1": "Dark, sword-and-magic fantasy, partly in the spirit of <strong>Lineage 2</strong>: civilization is a fragile, contested achievement rather than a stable backdrop.",
+    "p2": "Mana is the substance reality itself is made of. A city’s prosperity is upkeep, not a one-time unlock, and it visibly reverts toward barren wilderness if neglected.",
+    "p3": "The full idea: Mana &amp; Cosmology →",
+    "eyebrow2": "Genre &amp; pillars",
+    "h3_2": "The pitch and the promises",
+    "tbd1": "The one-line pitch and the three to five core pillars that every feature must serve are still open.",
+    "p4": "A pillar is a promise: if a feature doesn’t serve at least one, it probably doesn’t belong.",
+    "eyebrow3": "Core loop · seconds",
+    "h3_3": "Moment to moment",
+    "tbd2": "What the player does second by second.",
+    "eyebrow4": "Core loop · one sitting",
+    "h3_4": "Session",
+    "tbd3": "What a single sit-down looks like, from log-in to log-out.",
+    "eyebrow5": "Core loop · days to months",
+    "h3_5": "Progression",
+    "tbd4": "What accrues across sessions and brings a player back tomorrow."
+  },
+  "world": {
+    "title": "World",
+    "subtitle": "Lore and setting, kept apart from mechanics",
+    "h3_1": "Mana &amp; Cosmology",
+    "p1": "Mana as the substance of reality: city cores, blooming land and desert reversion.",
+    "h3_2": "Locations",
+    "p2": "A 33 × 24 km island with lakes, rivers, waterfalls and mountain ranges.",
+    "h3_3": "Factions",
+    "p3": "Who holds power, and how a player meets, joins or opposes them.",
+    "h3_4": "Timeline",
+    "p4": "The few past events the present day actually refers to."
+  },
+  "races": {
+    "title": "Races &amp; Characters",
+    "subtitle": "Who lives here",
+    "span": "Lore not written",
+    "h3_1": "Four playable races",
+    "p1": "Human, Elf, Dwarf and Orc. Their history, cultures and place in the world are not designed yet.",
+    "go1": "Meet the races →",
+    "h3_2": "Notable characters",
+    "p2": "Quest-givers, rivals and the voices of the world’s cities.",
+    "go2": "See the page →"
+  },
+  "systems": {
+    "title": "Systems",
+    "subtitle": "How each mechanic should feel, and why",
+    "h3_1": "Mana Economy",
+    "p1": "One shared mana layer under everything: a personal pool, monster mana cores, item upkeep, and the city core with its storage vaults.",
+    "h3_2": "Character Stats",
+    "p2": "Six primary attributes, the combat stats they feed, resources, and the order in which modifiers apply.",
+    "h3_3": "Combat",
+    "p3": "Hybrid tab-target and skill-shot casting. Locks can be broken, aimed shots are hit-or-miss, and allies never block your projectiles.",
+    "h3_4": "Progression",
+    "p4": "A non-combat passive tree, use-based weapon mastery, and crafting driven by Novice and Master stones.",
+    "h3_5": "PvP, Robbery &amp; PK",
+    "p5": "PvP that grows out of the economy: stolen cargo, sheriffs and warrants, persistent PK points, tracking and outlaw refuges.",
+    "h3_6": "World Progression",
+    "p6": "Finite resources, independent city economies, contracts, exploration, and technology unlocked by player discoveries.",
+    "h3_7": "Inventory &amp; Economy",
+    "p7": "Items, currency and trade. Not designed yet.",
+    "h3_8": "Social &amp; Guilds",
+    "p8": "Grouping, guilds and communication. Not designed yet."
+  },
+  "status": {
+    "title": "Status",
+    "subtitle": "Where things stand",
+    "p": "The game is in early development. This wiki shows the team’s current design notes: most of them are drafts that will change, and the open gaps are marked “Not designed yet”. It is updated as the design moves.",
+    "source-note": "This site presents the team’s design notes; it is not a separate canon. When the notes change, the wiki is updated to match. Names marked as working labels are placeholders, not lore."
+  }
+}

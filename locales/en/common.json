@@ -1,0 +1,58 @@
+{
+  "site": {
+    "skip": "Skip to content",
+    "subtitle": "Design wiki · working title",
+    "railLabel": "Design wiki",
+    "sections": "Wiki sections",
+    "language": "Language",
+    "phase": "Early development",
+    "phaseNote": "Everything here is a draft and will change."
+  },
+  "nav": {
+    "concept": "Concept",
+    "world": "World",
+    "races": "Races &amp; Characters",
+    "systems": "Systems",
+    "status": "Status",
+    "mana": "Mana Economy",
+    "stats": "Character Stats",
+    "combat": "Combat",
+    "progression": "Progression",
+    "pvp": "PvP, Robbery &amp; PK",
+    "world-progression": "World Progression",
+    "inventory-economy": "Inventory &amp; Economy",
+    "social-guilds": "Social &amp; Guilds"
+  },
+  "tag": {
+    "draft": "Draft",
+    "stub": "Stub",
+    "notDesigned": "Not designed yet"
+  },
+  "tbd": "Not designed yet.",
+  "toc": {
+    "title": "On this page"
+  },
+  "pager": {
+    "label": "Next and previous pages",
+    "prev": "← Previous",
+    "next": "Next →"
+  },
+  "footer": {
+    "note": "Design notes are drafts, not promises. Gaps are marked “Not designed yet”.",
+    "status": "Project status"
+  },
+  "ui": {
+    "theme": {
+      "system": "Theme: system",
+      "dark": "Theme: dark",
+      "light": "Theme: light",
+      "switch": "Switch theme"
+    },
+    "lightbox": {
+      "image": "Full-size image",
+      "download": "Download",
+      "original": "Open original",
+      "close": "Close"
+    }
+  }
+}

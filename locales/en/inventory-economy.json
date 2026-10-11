@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "title": "Inventory &amp; Economy · TBD MMO design wiki",
+    "description": "Items, currency and trade. Not designed yet."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / Inventory &amp; Economy",
+    "eyebrow": "Systems / 04.7",
+    "h1": "Inventory &amp; Economy",
+    "lede": "Where items, currency and trade should go. The world-level supply and demand that drives this lives in <a href=\"world-progression.html\">World Progression</a>."
+  },
+  "items": {
+    "title": "Items",
+    "tbd": "Categories, rarity, stacking rules, and what is equipment, consumable or material."
+  },
+  "currency": {
+    "title": "Currency &amp; trade",
+    "tbd": "A single currency or several? Player-to-player trade, shops, auctions, and what stops inflation."
+  },
+  "related": {
+    "title": "Already decided elsewhere",
+    "li1": "Raw mana cores work as a stable, tradeable store of value: <a href=\"mana.html#monster-cores\">Mana Economy</a>.",
+    "li2": "Every city runs its own market and prices: <a href=\"world-progression.html#cities\">World Progression</a>.",
+    "li3": "Stolen cargo can’t be sold or stored normally until a fence legalizes it: <a href=\"pvp.html#stolen-cargo\">PvP, Robbery &amp; PK</a>."
+  },
+  "pager": {
+    "prev": "World Progression",
+    "next": "Social &amp; Guilds"
+  }
+}

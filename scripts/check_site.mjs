@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-// Checks the static site before it goes public:
+// Checks the built site in _site/ before it goes public (run `npm run build` first,
+// or `npm run check` for both):
 //   - every local link and image resolves, including #fragments;
 //   - every page has a title, a description and the same navigation rail as the
 //     hub in its language;
@@ -9,25 +10,31 @@
 //   - every image has alt text, opens full size through <a class="zoom">, and
 //     images in assets/img are .webp or .svg and at most 300 KB;
 //   - no internal details leak (infrastructure names, IP addresses, drive
-//     paths, engine asset paths, credentials).
+//     paths, engine asset paths, credentials), neither in the built site nor in
+//     the repository, which is public too.
 // Exit code 0 when clean, 1 with a list of problems. Zero npm dependencies.
 
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { dirname, extname, join, posix, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const repo = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const root = join(repo, '_site');
+if (!existsSync(root)) {
+  console.error('_site/ not found: run `npm run build` first.');
+  process.exit(1);
+}
 const SITE_PREFIX = '/tbd-mmo-wiki/'; // GitHub Pages project path, used by 404.html
 const SITE_URL = 'https://diogen8.github.io/tbd-mmo-wiki/'; // published address, used by hreflang links
 const UK = 'uk/'; // the Ukrainian translation mirrors the English pages under this folder
 const MAX_IMAGE_BYTES = 300 * 1024;
-const SKIP_DIRS = new Set(['.git', 'node_modules', '.github']);
+const SKIP_DIRS = new Set(['.git', 'node_modules', '.github', '_site']);
 
 // Patterns that must never appear in published text. This file is the only
 // exception, because it has to spell them out.
 const FORBIDDEN = [
   [/tailscale/i, 'infrastructure name'],
-  [/perforce|\bp4\b|helix core/i, 'source-control detail'],
+  [/perforce|(?<![\w."])p4(?![\w"])|helix core/i, 'source-control detail'], // not translation keys like "p4"
   [/\b\d{1,3}(?:\.\d{1,3}){3}\b/, 'IP address'],
   [/(?<![A-Za-z])[A-Za-z]:\\/, 'Windows drive path'],
   [/(?<![A-Za-z])[A-Za-z]:\/(?!\/)/, 'Windows drive path'],
@@ -38,13 +45,13 @@ const FORBIDDEN = [
 const problems = [];
 const fail = (file, text) => problems.push(`${file}: ${text}`);
 
-function walk(dir) {
+function walk(dir, base = dir) {
   const out = [];
   for (const name of readdirSync(dir)) {
     if (SKIP_DIRS.has(name)) continue;
     const full = join(dir, name);
-    if (statSync(full).isDirectory()) out.push(...walk(full));
-    else out.push(relative(root, full).split(sep).join('/'));
+    if (statSync(full).isDirectory()) out.push(...walk(full, base));
+    else out.push(relative(base, full).split(sep).join('/'));
   }
   return out;
 }
@@ -158,9 +165,14 @@ for (const file of files.filter(f => f.startsWith('assets/img/'))) {
   if (size > MAX_IMAGE_BYTES) fail(file, `${Math.round(size / 1024)} KB is over the ${MAX_IMAGE_BYTES / 1024} KB limit`);
 }
 
-const self = relative(root, fileURLToPath(import.meta.url)).split(sep).join('/');
-for (const file of files.filter(f => /\.(html|css|js|mjs|json|md|txt|svg)$/.test(f) && f !== self)) {
-  const text = readFileSync(join(root, file), 'utf8');
+// The leak scan covers what is published (_site/) and what is in the public
+// repository: templates, translations, scripts and docs.
+const TEXT = /\.(html|njk|css|js|mjs|json|md|txt|svg|yml)$/;
+const self = relative(repo, fileURLToPath(import.meta.url)).split(sep).join('/');
+const sources = walk(repo).filter(f => TEXT.test(f) && f !== self && f !== 'package-lock.json');
+const scanned = [...files.filter(f => TEXT.test(f)).map(f => `_site/${f}`), ...sources];
+for (const file of scanned) {
+  const text = readFileSync(join(repo, file), 'utf8');
   text.split(/\r?\n/).forEach((line, i) => {
     for (const [pattern, what] of FORBIDDEN) {
       if (pattern.test(line)) fail(`${file}:${i + 1}`, `looks like an internal detail (${what}): ${line.trim().slice(0, 120)}`);
@@ -173,4 +185,4 @@ if (problems.length) {
   console.log(`\n${problems.length} problem(s).`);
   process.exit(1);
 }
-console.log(`OK: ${pages.length} pages, ${files.length} files checked.`);
+console.log(`OK: ${pages.length} pages, ${files.length} published files and ${sources.length} source files checked.`);

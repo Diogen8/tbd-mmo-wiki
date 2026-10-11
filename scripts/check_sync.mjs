@@ -116,7 +116,7 @@ if (goneExcluded.length) {
 }
 
 if (problems) {
-  console.log(`\n${problems} issue(s). Update the wiki page and its uk/ translation, then re-pin with --accept <section-id>,`);
+  console.log(`\n${problems} issue(s). Update the page's text in locales/en and locales/uk, then re-pin with --accept <section-id>,`);
   console.log('or map/exclude the note in sources.json.');
   process.exit(1);
 }

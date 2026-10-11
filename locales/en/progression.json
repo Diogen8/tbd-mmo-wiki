@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "title": "Progression · TBD MMO design wiki",
+    "description": "Three progression axes: a non-combat passive tree, use-based weapon mastery, and crafting through Novice and Master stones."
+  },
+  "intro": {
+    "crumbs": "<a href=\"../index.html\">Design wiki</a> / <a href=\"../index.html#systems\">04 Systems</a> / Progression",
+    "eyebrow": "Systems / 04.4",
+    "h1": "Progression",
+    "lede": "Three separate axes, deliberately not stacked on the same power source, so they never compete or duplicate each other.",
+    "p": "A team brainstorm, ongoing since September 2026. Not agreed for build yet."
+  },
+  "toc": {
+    "core-idea": "Core idea",
+    "passive-tree": "The passive tree",
+    "reset": "Reset (soft prestige)",
+    "never-gate": "Why affinities never gate",
+    "stones": "Crafting stones",
+    "anti-grind": "Anti-grind"
+  },
+  "core-idea": {
+    "title": "Core idea",
+    "li1": "<strong>Passive tree</strong>: non-combat and low-power; it shapes <em>how fast</em> you grow. Inspired by Path of Exile’s tree, but the tree itself carries almost no direct power.",
+    "li2": "<strong>Use-based weapon mastery</strong>: fight with a one-handed sword, get better with one-handed swords. Diminishing returns per kill and target resist grinding. Gains come from hits the server confirms, not from what a client reports. Mastery thresholds unlock weapon-specific active skills.",
+    "li3": "<strong>Crafting, through Novice and Master stones</strong>: governs crafting skill growth specifically; a concrete two-item, three-tier system described below.",
+    "p": "The rough split: <strong>stones set the floor and raise the ceiling</strong>, <strong>practice fills in the ceiling</strong>, and the <strong>passive tree sets the direction</strong>, meaning how fast you grow and toward what."
+  },
+  "passive-tree": {
+    "title": "The passive tree",
+    "li1": "Nodes are <strong>diplomacy, trade and survival</strong>, explicitly not combat. Combat power comes from weapon mastery, not from the tree. That is what makes a full tree wipe on reset tolerable: resetting costs social and economic reach, never your ability to fight.",
+    "li2": "Individual nodes give almost nothing numerically. Weight comes from breadth and from qualitative unlocks (dialogue options, trade routes, recipes), not from stacking small percentages. A numerically weak node still needs to <em>do</em> something distinct, or the tree feels pointless even in aggregate. The node catalogue is not designed yet.",
+    "li3": "<strong>Affinity nodes</strong> don’t grant power directly. They raise an <em>affinity</em> (for example Light) that speeds up mastery gain for related skills, and possibly crafting-stone effectiveness too (an open question). This ties the tree to the other systems instead of leaving it standalone.",
+    "li4": "<strong>Affinities must accelerate, never gate.</strong> Zero affinity in something still trains it, just slower. This is the one hard constraint; see below.",
+    "li5": "<strong>Level-up</strong> gives a small stat increment and one tree point. Linear, and not the main power source."
+  },
+  "reset": {
+    "title": "Reset (soft prestige)",
+    "li1": "At level 100, resetting is <strong>optional</strong>. A player can stay at 100 indefinitely and keep growing through gear and weapon mastery. It is not a gate on further progression.",
+    "li2": "On reset, level returns to 1 and <strong>the tree wipes completely</strong> and must be replanned. Weapon mastery and crafting-stone progress are <strong>not</strong> touched: nothing about combat or crafting capability is lost.",
+    "li3": "What is kept: a <strong>flat, one-time permanent bonus</strong> to the tree’s point budget per reset, currently framed as +1. Growth across resets is additive, not multiplicative, so it doesn’t blow out into an unbounded veteran-versus-newcomer gap.",
+    "li4": "The narrative payoff: a character can genuinely redirect across a “second life”. Level to 100 as a warrior, then respec the tree toward Light affinity on the second pass, without losing what the first life built."
+  },
+  "never-gate": {
+    "title": "Why affinities must never gate",
+    "p1": "EVE Online once had almost this exact mechanic: eleven “Learning” skills that boosted training speed for everything else. CCP removed them in December 2010. They had become a mandatory tax new players felt they had to train before doing anything else, they added no real strategic choice, and they let dedicated players skip ahead of the intended pace (<a href=\"https://www.eveonline.com/news/view/learning-skills-are-going-away-1\" rel=\"noopener\">Learning skills are going away</a>).",
+    "p2": "An affinity of zero must mean “slower”, never “blocked” or so slow that it is effectively blocked."
+  },
+  "stones": {
+    "title": "Crafting: Novice and Master stones",
+    "p1": "Two consumable items, both made of <strong>crystallized mana</strong>. See <a href=\"../world.html#cosmology\">Cosmology</a> for what that means in the world, and <a href=\"mana.html#monster-cores\">Mana Economy</a> for where their material comes from.",
+    "eyebrow1": "Sets the floor",
+    "h3_1": "Novice Stone",
+    "p2": "Equip it and it passively teaches a crafting skill up to a soft threshold of acceptable competence. EVE’s “learn while you sleep” idea, but capped.",
+    "eyebrow2": "Raises the ceiling",
+    "h3_2": "Master Stone",
+    "p3": "For top-tier mastery. Worn continuously, it slowly <em>raises</em> the practice ceiling rather than granting progress directly. Hands then fill the new headroom.",
+    "li1": "<strong>Only hands from there.</strong> Past the Novice Stone’s cap, progress needs actual crafting, with the same diminishing-returns shape as weapon mastery. Practice alone has its own natural ceiling and never reaches true mastery, by design.",
+    "li2": "Stone and practice are both required at the top. Neither alone gets there.",
+    "h3_3": "Depletion and the single-slot rule",
+    "li3": "<strong>Both stones drain just from being equipped.</strong> They are crystallized mana, so they constantly leak, whether the wearer is asleep, crafting, fighting or idle. The drain is tied to time worn, not to use.",
+    "li4": "<strong>Only one stone, of either tier, can be active at a time</strong>, across all skills. This is the specialization lever: pushing a Master Stone toward mastery in one craft means you can’t bootstrap a second skill with a Novice Stone without unequipping the Master Stone, which pauses its ceiling-raising.",
+    "li5": "A tension worth keeping: carrying a rare, draining Master Stone into risky content is a real decision between exposure and progress. For raw mana cores the death rules are settled in <a href=\"pvp.html#resource-loss\">PvP, Robbery &amp; PK</a>; whether an equipped stone can be lost the same way is still open."
+  },
+  "anti-grind": {
+    "title": "Anti-grind (weapon mastery)",
+    "p": "Diminishing returns per kill aren’t enough on their own; the Elder Scrolls “safe grinding” complaints and Ultima Online macro-training are the failure modes to avoid. At minimum it also needs experience against far-below-level targets tapering toward zero, and/or a per-session or daily soft cap. The exact curve is not designed yet."
+  },
+  "pace": {
+    "title": "Pace",
+    "questions": {
+      "summary": "Open questions · Progression",
+      "li1": "The reset bonus size (+1 or larger) depends on an earlier decision: should the tree ever be fully completable by a dedicated player, or always stay a trade-off, as in Path of Exile? Pick the philosophy first, then size the number from the total node count.",
+      "li2": "Total tree size and the node catalogue.",
+      "li3": "The exact anti-grind curve for weapon mastery.",
+      "li4": "Do affinity boosts apply only to future training, or can they be reallocated some other way? The current framing is future only.",
+      "li5": "The soft cap for the Novice threshold, and how much headroom a Master Stone opens over what interval.",
+      "li6": "Where do stones come from?",
+      "li7": "<strong>Resolved:</strong> crafted from monster mana cores; the source core’s quality sets the stone’s tier. Still open: the exact acquisition and crafting cost, and how it interacts with the wider economy.",
+      "li8": "Can a stone actually be lost (death, theft), or is it safe once acquired? That decides how much weight the risk of carrying it really has."
+    }
+  },
+  "pager": {
+    "prev": "Combat",
+    "next": "PvP, Robbery &amp; PK"
+  }
+}
